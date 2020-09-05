@@ -4,6 +4,11 @@
 
 $font-color: #3CCACE;
 
+@mixin btnSize($width: 180px, $margin-right: 20px) {
+  width: $width;
+  margin-right: $margin-right;
+}
+
 .Main {
   .Visual {
     width: 100%;
@@ -41,8 +46,7 @@ $font-color: #3CCACE;
         margin: 24px 0 0 0;
       }
       &__icon--btn {
-      width: 180px;
-      margin-right: 20px;
+        @include btnSize();
       }
     }
   }
@@ -144,8 +148,7 @@ $font-color: #3CCACE;
         line-height: 1.5;
       }
       &__icon--btn {
-      width: 180px;
-      margin-right: 20px;
+        @include btnSize();
       }
     }
   }

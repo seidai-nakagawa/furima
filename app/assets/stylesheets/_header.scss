@@ -23,6 +23,11 @@ body {
 }
 $font-color: #3CCACE;
 
+@mixin btnSize($width: 180px, $margin-right: 20px) {
+  width: $width;
+  margin-right: $margin-right;
+}
+
 .Header {
   padding: 0 60px;
   .Contents {
@@ -116,8 +121,7 @@ $font-color: #3CCACE;
       width: 180px;
     }
     &__icon--btn {
-      width: 180px;
-      margin-right: 20px;
+      @include btnSize();
     }
   }
 }
