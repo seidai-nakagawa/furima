@@ -1,2 +1,230 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.erb
+%main.Main
+  %section.Visual
+    .Content
+      %h2.Content__subtitle
+        %br
+        人生を変えるフリマアプリ
+      %p.Content__text
+        FURIMAはだれでもかんたんに出品・購入できる
+        %br
+        フリマアプリです
+      .Content__icon
+        %a.aBtn(href="#")
+          = link_to image_tag("material/pict/app-store-.svg", class: "Content__icon--btn")
+        %a.gBtn(href="#")
+          = link_to image_tag("material/pict/google-play.svg",  class: "Content__icon--btn")
+
+  %section.Introduction
+    %h2.Title
+      FURIMAが選ばれる3つの理由
+    %ul.Lists
+      %li.List
+        .List__pict
+          %span.List__pict--number 1
+          = image_tag("material/pict/pict-reason-01.jpg", class:"List__pict--img")
+        %h3.List__text
+          %span 3分
+          ですぐに出品
+        %p.List__description
+          スマホで入力するだけで簡単に出品できる！
+      %li.List
+        .List__pict
+          %span.List__pict--number 2
+          = image_tag("material/pict/pict-reason-02.jpg", class:"List__pict--img")
+        %h3.List__text
+          %span シンプル
+          で使いやすい
+        %p.List__description
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.List.list--last
+        .List__pict
+          %span.List__pict--number 3
+          = image_tag("material/pict/pict-reason-03.jpg", class:"List__pict--img")
+        %h3.List__text
+          手数料
+          %span 業界最安
+        %p.List__description
+          最大3%でお得に出品&amp;購入！
+ 
+  %section.Number1Dl
+    .Content
+      %h2.Content__title 会員数日本一位
+      %p.Content__text
+        FURIMAは、フリマアプリで最も人気。
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        ほしかったあの商品に出会えるかもしれません。
+      .Content__icon
+        %a.aBtn(href="#")
+          = link_to image_tag("material/pict/app-store-.svg", class: "Content__icon--btn")
+        %a.gBtn(href="#")
+          = link_to image_tag("material/pict/google-play.svg",  class: "Content__icon--btn")
+
+  %section.Features
+    %h2.Title FURIMAの特徴
+    .Items
+      .Item
+        .Item__pict
+          = image_tag("material/icon/icon-01.png", class:"Item__pict--img")
+        %h3.Item__subtitle 簡単に売り買いできる
+        %p.Item__detail
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .Item
+        .Item__pict
+          = image_tag("material/icon/icon-03.png", class:"Item__pict--img")
+        %h3.Item__subtitle 売上金は即日振込みに対応
+        %p.Item__detail
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+      .Item
+        .Item__pict
+          = image_tag("material/icon/icon-04.png", class:"Item__pict--img")
+        %h3.Item__subtitle 様々な支払いに対応
+        %p.Item__detail
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+  %section.PickupCategory
+    %h2.Title ピックアップカテゴリー
+    .ProductBox
+      .ProductHead
+        %a(href="#")
+          %h3.ProductHead__title 新規投稿商品
+      .ProductLists
+        .ProductList
+          %a(href="#")
+            %figure.ProductList__img
+              %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG")/
+            .ProductList__body
+              %h3.ProductList__body--ProductList__body--name テスト
+              .ProductList__body--details
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
+                    1
+                %p (税込)
+        .ProductList
+          %a(href="#")
+            %figure.ProductList__img
+              %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG")/
+            .ProductList__body
+              %h3.ProductList__body--name ee
+              .ProductList__body--details
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
+                    0
+                %p (税込)
+        .ProductList
+          %a(href="#")
+            %figure.ProductList__img
+              %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")/
+            .ProductList__body
+              %h3.ProductList__body--name product3
+              .ProductList__body--details
+                %ul
+                  %li 30000円
+                  %li
+                    = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
+                    0
+                %p (税込)
+        .ProductList
+          %a(href="#")
+            %figure.ProductList__img
+              %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png")/
+            .ProductList__body
+              %h3.ProductList__body--name product2
+              .ProductList__body--details
+                %ul
+                  %li 20000円
+                  %li
+                    = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
+                    0
+                %p (税込)
+        .ProductList
+          %a(href="#")
+            %figure.ProductList__img
+              %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png")/
+            .ProductList__body
+              %h3.ProductList__body--name product1
+              .ProductList__body--details
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
+                    1
+                %p (税込)
+
+  %section.PickupContainer
+    %h2.Title ピックアップブランド
+    .ProductBox
+      .ProductHead
+        %a(href="#")
+          %h3.ProductHead__title アーカイバ
+      .ProductLists
+        .ProductList
+          %a(href="#")
+            %figure.ProductList__img
+              %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG")/
+            .ProductList__body
+              %h3.ProductList__body--name テスト
+              .ProductList__body--details
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
+                    1
+                %p (税込)
+        .ProductList
+          %a(href="#")
+            %figure.ProductList__img
+              %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG")/
+            .ProductList__body
+              %h3.ProductList__body--name ee
+              .ProductList__body--details
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
+                    0
+                %p (税込)
+        .ProductList
+          %a(href="#")
+            %figure.ProductList__img
+              %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")/
+            .ProductList__body
+              %h3.ProductList__body--name product3
+              .ProductList__body--details
+                %ul
+                  %li 30000円
+                  %li
+                    = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
+                    0
+                %p (税込)
+        .ProductList
+          %a(href="#")
+            %figure.ProductList__img
+              %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png")/
+            .ProductList__body
+              %h3.ProductList__body--name product2
+              .ProductList__body--details
+                %ul
+                  %li 20000円
+                  %li
+                    = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
+                    0
+                %p (税込)
+        .ProductList
+          %a(href="#")
+            %figure.ProductList__img
+              %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png")/
+            .ProductList__body
+              %h3.ProductList__body--name product1
+              .ProductList__body--details
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
+                    1
+                %p (税込)
