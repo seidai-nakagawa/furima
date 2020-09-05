@@ -9,6 +9,19 @@ $font-color: #3CCACE;
   margin-right: $margin-right;
 }
 
+@mixin clearfix() {
+  &:after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background-color: $font-color;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .Main {
   .Visual {
     width: 100%;
@@ -61,16 +74,7 @@ $font-color: #3CCACE;
       margin-bottom: 25px;
       padding-bottom: 15px;
       position: relative;
-    }
-    .Title::after {
-      content: "";
-      width: 70px;
-      height: 4px;
-      background-color: $font-color;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      @include clearfix();
     }
     .Lists {
       text-align: center;
@@ -163,16 +167,7 @@ $font-color: #3CCACE;
       margin-bottom: 25px;
       padding-bottom: 15px;
       position: relative;
-    }
-    .Title::after {
-      content: "";
-      width: 70px;
-      height: 4px;
-      background-color: $font-color;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      @include clearfix();
     }
     .Items {
       max-width: calc(1040px + 20px);
