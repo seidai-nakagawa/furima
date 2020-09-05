@@ -2,6 +2,8 @@
   opacity: 0.5;
 }
 
+$font-color: #3CCACE;
+
 .Main {
   .Visual {
     width: 100%;
@@ -60,7 +62,7 @@
       content: "";
       width: 70px;
       height: 4px;
-      background-color: #3CCACE;
+      background-color: $font-color;
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -92,7 +94,7 @@
           text-align: center;
           margin: 0 5px 0 0;
           padding: 10px 20px;
-          background-color: #3CCACE;
+          background-color: $font-color;
           color: #fff;
           }
         &__pict--img {
@@ -107,7 +109,7 @@
           margin: 0 0 0 2px;
         }
         &__text span {
-          color:#3CCACE
+          color:$font-color
         }
         &__description {
           font-size: 18px;
@@ -163,7 +165,7 @@
       content: "";
       width: 70px;
       height: 4px;
-      background-color: #3CCACE;
+      background-color: $font-color;
       position: absolute;
       bottom: 0;
       left: 50%;
@@ -218,7 +220,7 @@
       .ProductHead {
         text-align: center;
         &__title {
-          color: #3CCACE;
+          color: $font-color;
           font-size: 28px;
           line-height: 1.4;
           font-weight: bold;
