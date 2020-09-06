@@ -65,8 +65,8 @@
 | Column              | Type       | Options                        |
 |---------------------|------------|--------------------------------|
 | comment             | text       | null: false                    |
-| user_id             | references | null: false, foreign_key: true |
-| item_id             | references | null: false, foreign_key: true |
+| user                | references | null: false, foreign_key: true |
+| item                | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -97,7 +97,7 @@
 |Column  | Type       | Options                        |
 | ------ | ---------- | -----------------------------  |
 |url     | string     | null: false                    |
-|item_id | references | null: false, foreign_key: true |
+|item    | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :item
@@ -108,7 +108,7 @@
 | -------------- | ---------- | ------------------------------ |
 | card_token     | integer    | null: false, unique: true      |
 | customer_token | integer    | null: false                    |
-| user_id        | references | null: false, foreign_key: true |
+| user           | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to: user
