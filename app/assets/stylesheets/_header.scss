@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body {
+  margin: 0;
+  padding: 0;
+}
+$font-color: #3CCACE;
+
+@mixin btnSize($width: 180px, $margin-right: 20px) {
+  width: $width;
+  margin-right: $margin-right;
+}
+
+.Header {
+  padding: 0 60px;
+  .Contents {
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    .Main {
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-bottom: 10px;
+      .Title {
+        &__logo {
+        width: 140px;
+        height: 40.55px;
+        margin-right:30px;
+        }
+      }
+      .SearchBox {
+        &__text {
+         width: calc(100% - 26px);
+         height: 36px;
+         padding-left: 5px;
+        }
+        &__btn {
+          width: 36px;
+          height: 36px;
+          border: 0;
+          cursor: pointer;
+          background-color: $font-color;
+          padding: 8px;
+          border: 0px;
+          display: block;
+          &__icon {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        &__btn:hover {
+          background: #85d2d4;
+        }
+      }
+    }
+    .Nav {
+      display: flex;
+      justify-content: space-between;
+      text-decoration: none;
+      
+      .Product  {
+        text-decoration: none;
+        &__category, &__brand{
+          margin-right: 30px;
+          text-decoration: none;
+          font-size: 14px;
+        }
+        &__category:hover, &__brand:hover {
+          color: orange;
+        }
+      }
+      .User {
+        &__login, &__new{
+          padding-left:30px;
+          text-decoration: none;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.Banner {
+  background-image : url(material/pict/bg-appBanner-pict.jpg );
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  .Contents{
+    color: #fff;
+    text-align: center;
+    &__title{
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    &__text{
+      font-size: 35px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    &__icon {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 20px auto 0;
+      width: 180px;
+    }
+    &__icon--btn {
+      @include btnSize();
+    }
+  }
+}
