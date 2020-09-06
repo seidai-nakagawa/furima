@@ -23,12 +23,22 @@
 | phone_number                    | string   |                                        |
 
 ### Association
-- has_many :sold_items, foreign_key: 'seller_id', class_name: 'Item'
-- has_many :bought_items, foreign_key: 'buyer_id', class_name: 'Item'
+- has_many :purchase_informations
 - has_many :items
 - has_many :comments
 - has_one :credit_card, dependent: :destroy
 - belongs_to_active_hash :prefecture
+
+
+## purchase_informations テーブル （中間テーブル）
+| Column    | Type       | Options                        |
+|-----------|------------|--------------------------------|
+| user      | references | null: false, foreign_key: true |
+| item      | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :item
 
 
 ## items テーブル
@@ -44,11 +54,12 @@
 | shipping_charge_id  | integer    | null: false                    | (active_hash)
 | shipping_date_id    | integer    | null: false                    | (active_hash)
 | prefecture_id       | integer    | null: false                    | (active_hash)
-| buyer_id            | references | foreign_key: true              |
-| seller_id           | references | null: false, foreign_key: true |
+| user                | references | null: false, foreign_key: true |
 
 ### Association
 - has_many :item_images, dependent: :destroy
+- has_many :purchase_informations
+- belongs_to :user
 - belongs_to :category
 - belongs_to :brand
 - belongs_to_active_hash :size
@@ -56,9 +67,6 @@
 - belongs_to_active_hash :shipping_charge
 - belongs_to_active_hash :shipping_date
 - belongs_to_active_hash :prefecture
-- belongs_to :seller, class_name: “User”
-- belongs_to :buyer, class_name: “User”, optional: true
-<!-- 上記２行によりuserテーブルの「id」とitemsテーブルの「buyer_id」「seller_id」が紐づく -->
 
 
 ## comments テーブル（中間テーブル）
