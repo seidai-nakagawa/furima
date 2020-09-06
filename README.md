@@ -36,7 +36,7 @@
 |---------------------|------------|--------------------------------|
 | name                | string     | null: false, index: true       |
 | price               | integer    | null: false                    |
-| explanation         | text       |                                |
+| explanation         | text       | null: false                    |
 | category_id         | references | null: false, foreign_key: true |
 | brand_id            | references | null: false, foreign_key: true |
 | size_id             | integer    | null: false                    | (active_hash)
