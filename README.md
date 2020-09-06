@@ -106,8 +106,8 @@
 ## credit_cards テーブル
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
-| card_token     | integer    | null: false, unique: true      |
-| customer_token | integer    | null: false                    |
+| card_token     | string     | null: false, unique: true      |
+| customer_token | string     | null: false                    |
 | user           | references | null: false, foreign_key: true |
 
 ### Association
