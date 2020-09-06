@@ -47,8 +47,8 @@
 | name                | string     | null: false, index: true       |
 | price               | integer    | null: false                    |
 | explanation         | text       | null: false                    |
-| category_id         | references | null: false, foreign_key: true |
-| brand_id            | references | null: false, foreign_key: true |
+| category            | references | null: false, foreign_key: true |
+| brand               | references | null: false, foreign_key: true |
 | size_id             | integer    | null: false                    | (active_hash)
 | state_id            | integer    | null: false                    | (active_hash)
 | shipping_charge_id  | integer    | null: false                    | (active_hash)
