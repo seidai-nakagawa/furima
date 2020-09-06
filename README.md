@@ -15,7 +15,7 @@
 | first_name_to_deliver           | string   | null: false                            |
 | family_name_to_deliver_furigana | string   | null: false                            |
 | first_name_to_deliver_furigana  | string   | null: false                            |
-| post_code                       | integer  | null: false                            |
+| post_code                       | string   | null: false                            |
 | prefecture_id                   | integer  | null: false                            | (active_hash) |
 | city_name                       | string   | null: false                            |
 | city_address                    | string   | null: false                            |
