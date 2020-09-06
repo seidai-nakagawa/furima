@@ -101,7 +101,7 @@
 - has_many :items
 
 
-## item_imags テーブル
+## item_images テーブル
 |Column  | Type       | Options                        |
 | ------ | ---------- | -----------------------------  |
 |url     | string     | null: false                    |
