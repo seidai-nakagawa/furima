@@ -24,7 +24,7 @@
 
 ### Association
 - has_many :purchase_informations
-- has_many :items
+- has_many :items, dependent: :destroy
 - has_many :comments
 - belongs_to_active_hash :prefecture
 
