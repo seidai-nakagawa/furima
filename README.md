@@ -26,7 +26,6 @@
 - has_many :purchase_informations
 - has_many :items
 - has_many :comments
-- has_one :credit_card, dependent: :destroy
 - belongs_to_active_hash :prefecture
 
 
@@ -111,13 +110,3 @@
 ### Association
 - belongs_to :item
 
-
-## credit_cards テーブル
-| Column         | Type       | Options                        |
-| -------------- | ---------- | ------------------------------ |
-| card_token     | string     | null: false, unique: true      |
-| customer_token | string     | null: false                    |
-| user           | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to: user
