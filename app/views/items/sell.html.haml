@@ -1,0 +1,73 @@
+.sell-container
+
+   -# 画像部分
+  .sell-image
+    .sell-title
+      .sell__text
+        %label 出品画像
+      .sell__require
+        %span 必須
+    .sell-image__box
+    .error-messages
+
+  -# 商品概要部分
+  .sell-item
+    .sell-title
+      .sell__text
+        %label 商品名
+      .sell__require
+        %span 必須
+    = f.text_field :name, {class: 'sell-item__short--word', maxlength: '40', placeholder: '商品名（必須 40文字まで)'}
+    .error-messages
+    .sell-title    
+    .text_area{class: ".sell-item__description"}
+      .sell-item_word
+
+  -# 詳細部分
+  .sell-detail
+    .sell-detail__head
+    .sell-title
+      .sell__text
+        %label 商品の説明
+      .sell__require
+        %span 必須
+    .sell-select-category
+    .sell-title
+    = f.text_field method, {}
+    .sell-title
+    .sell-select-state
+
+  -# 配送部分
+  .sell-shipping
+    .sell-shipping__head
+    .sell-title
+    .sell-select-charge
+    .sell-title
+    .sell-select-area
+    .sell-title
+    .sell-select-date
+
+  -# 販売部分
+  .sell-sale
+    -# 価格部分
+    .sell-price
+      .sell-price__head
+      .sell-title
+      .sell-price__commission
+        .sell-price__commission--left
+        .sell-price__commission--right
+
+    -# 利益部分
+    .sell-profit
+      .sell-profit__head
+        .sell-profit__head--left
+        .sell-profit__head--right
+    .submit-btn
+      .submit-btn--exhibition
+    .submit-btn
+      .submit-btn--back
+    .sell-ban
+      .sell-ban--text
+        %p
+          禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰され
+          る可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
