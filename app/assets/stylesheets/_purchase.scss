@@ -29,15 +29,44 @@
       margin: 30px auto;
       display: flex;
       justify-content: space-between;
+      padding: 20px;
+      border-top: 1px solid rgb(222, 226, 240);
+      border-bottom: 1px solid rgb(222, 226, 240);
       &__image {
-
       }
       &__box {
         margin: 10px;
         text-align: left;
         &__name {
- 
         }
+        &price {          
+        }
+      }
+    }
+    .Wrapper {
+      .Content {
+        &__price {
+          max-width: 375px;
+          margin: 30px auto;
+          display: flex;
+          justify-content: space-between;
+        }
+        &__point {
+          max-width: 375px;
+          margin: 30px auto;
+          display: flex;
+          justify-content: space-between;
+        }
+        &__payment {
+          max-width: 375px;
+          margin: 30px auto;
+          border-top: 1px solid rgb(222, 226, 240);
+          border-bottom: 1px solid rgb(222, 226, 240);
+          padding: 20px;
+          text-align: left;
+         
+        }
+
       }
     }
   }
