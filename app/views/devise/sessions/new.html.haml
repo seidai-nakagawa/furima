@@ -1,17 +1,41 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.Login
+  %h1 
+    %a{href: "/"}
+      = image_tag("material/logo/logo.png",class: 'Login__logo')
+  %main
+    .Login__panel
+      .Login__panel__no-account
+        %p.Login__panel__no-account__comment アカウントをお持ちでない方はこちら
+        - if devise_mapping.registerable? && controller_name != 'registrations'
+          = link_to "新規会員登録", new_registration_path(resource_name), class: 'Login__panel__no-account__button'
+      .Login__panel__sns-btn
+        .Login__panel__sns-btn__google
+          = link_to "#", class: "Login__panel__sns-btn__google__btn" do
+            = icon('fab', 'google', class: "fab")
+            %span Googleでログイン
+        .Login__panel__sns-btn__facebook
+          = link_to "#", class: "Login__panel__sns-btn__facebook__btn" do
+            = icon('fab', 'facebook-square', class: "fab")
+            %span Facebookでログイン
+        .Login__panel__sns-btn__apple
+          = link_to "#", class: "Login__panel__sns-btn__apple__btn" do
+            = icon('fab', 'apple', class: "fab")
+            %span Appleでログイン
+
+      .Login__panel__login-form
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: 'field__size'
+          .field
+            = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: 'field__size'
+          .field 
+            .field__unimplemented 後日「私はロボットではありません」という確認欄を実装する
+          .actions
+            = f.submit "ログイン", class: 'submit-btn-size'
+        - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+          = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: 'Login__panel__login-form__forget-password'
+    .Login__furima-icon
+      %h1
+        = link_to image_tag("material/logo/logo-white.png", class: "Furima-icon")
+      .Text
+        ©︎ FURIMA  

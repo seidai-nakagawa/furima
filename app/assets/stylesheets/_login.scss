@@ -1,0 +1,157 @@
+.Login{
+  background-color: #eee;
+  &__logo{
+    width: 200px;
+    height: 57px;
+    margin: 30px 0;
+  }
+
+  h1{
+    text-align: center;
+  }
+
+  &__panel{
+    max-width: 456px;
+    margin: 0 auto;
+    background: #fff;
+    height: 861px;
+    @mixin login-btn($margin:16px 0 0, $border-radius: 4px, $line-height: 40px, $text-align: center, $text-decoration: none, $line-height: 54px, $font-size: 14px) {
+      margin: $margin;
+      border-radius:  $border-radius;
+      line-height: $line-height;
+      text-align: $text-align;
+      text-decoration: $text-decoration;
+      line-height: $line-height;
+      font-size: $font-size;
+    }
+
+    &__no-account{
+      padding: 40px 64px;
+      border-bottom: 1px solid #eaf3fa;
+
+      &__button, a{
+        @include login-btn;
+        display: block;
+        border: 1px solid #3CCACE;
+        background: #3CCACE;
+        color: #fff;
+      }
+      
+      &__comment{
+        text-align: center
+      }
+    }
+
+    &__sns-btn{
+      padding: 20px 64px;
+      &__google{
+        &__btn{
+          @include login-btn;
+          border: #979797 solid 1px;
+          background: #fff;
+          color: black;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+        &__btn, span{
+          padding-right: 44px;
+        }
+      }
+
+
+      &__facebook{
+        &__btn{
+          @include login-btn;
+          background: #385185;
+          color: #fff;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+        &__btn, span{
+          padding-right: 35px;
+        }
+      }
+
+      &__apple{
+        &__btn{
+          @include login-btn;
+          background: black;
+          color: #fff;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        }
+        &__btn, span{
+          padding-right: 44px;
+        }
+      }
+
+      .fab{
+        font-size: 25px; 
+        padding-left: 5px;
+        padding-right: 30px;
+      }
+    }
+
+    &__login-form{
+      padding: 20px 64px;
+      
+      .field{
+        &__size{
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 54px;
+          font-size: 14px;
+          width: 100%;
+          margin-top: 20px;
+        }
+        &__unimplemented{
+          background: #dadada;
+          color: #fff;
+          padding: 10px;
+          margin: 20px 0;
+          border-radius: 4px;
+        }
+      }
+      
+      .submit-btn-size{
+        border-radius: 4px;
+        border: 1px solid #3CCACE;
+        background: #3CCACE;
+        color: #fff;
+        line-height: 45px;
+        font-size: 15px;
+        width: 100%;
+        margin: 20px 0 40px;
+      }
+      
+      &__forget-password, a{
+        text-decoration: none;
+        color: #3CCACE;
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__furima-icon{
+    display: block;
+    h1 {
+      .Furima-icon {
+        width: 160px;
+        vertical-align: bottom;
+        text-align: center;
+        margin-top: 100px;
+      }
+    }
+    .Text {
+      font-size: 14px;
+      text-align: center;
+      padding:0 0 50px;
+    }
+  }
+}
