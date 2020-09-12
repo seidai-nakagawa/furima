@@ -6,10 +6,15 @@
   background-color: #f8f8f8;
   .Logo {
     text-align: center;
-    &__image {
-      width: 140px;
-      height: 40.55px;
-      margin-right:30px;
+  .Header {
+    height: 128px;
+    .Logo {
+      text-align: center;
+      margin: 30px 0 0 0;
+      &__image {
+        height: 54px;
+        width: 185px;
+      }
     }
   }
   .Content {
@@ -28,45 +33,117 @@
       max-width: 375px;
       margin: 30px auto;
       display: flex;
-      justify-content: space-between;
-      padding: 20px;
+      padding: 32px 16px ;
       border-top: 1px solid rgb(222, 226, 240);
       border-bottom: 1px solid rgb(222, 226, 240);
       &__image {
+        &__img {
+        height: 80px;
+        width: 80px;
+        }
       }
       &__box {
-        margin: 10px;
-        text-align: left;
+        width: 100%;
+        margin-left: 16px;
         &__name {
-        }
-        &price {          
+          font-size: 14px;
+          line-height: 1.4em;
+          margin-bottom: 8px;
+          text-align: left;
+         }
+        &__price {
+          display: flex;
+          justify-content: flex-end;
+          &__sipping {
+            font-size: 12px;
+          }
+          &__amount {
+            font-size: 15px;
+            font-weight: 600;
+            margin-left: 8px;
+          }
         }
       }
     }
     .Wrapper {
+      max-width: 375px;
+      margin: 30px auto;
       .Content {
         &__price {
-          max-width: 375px;
           margin: 30px auto;
           display: flex;
           justify-content: space-between;
+          padding: 0 20px;
+          font-size: 18px;
+          font-weight: 600;
+          &__amount {
+            font-size: 24px;
+          }
         }
         &__point {
-          max-width: 375px;
           margin: 30px auto;
           display: flex;
           justify-content: space-between;
+          padding: 20px;
+          border-bottom: 1px solid rgb(222, 226, 240);
+          &__text {
+            font-weight: 600;
+            line-height: 1.4em;
+            vertical-align: middle;
+            opacity: 0.5;
+            font-size: 14px;
+          }
+          &__amount {
+            font-size: 12px;
+            text-align: right;
+          }
         }
         &__payment {
-          max-width: 375px;
           margin: 30px auto;
+          padding: 0 20px;
+          text-align: left;
+          font-size: 14px;
+            &__text {
+              font-weight: 600;
+            }
+            &__method {
+              
+              padding-top: 15px;
+            }
+
+          &__logo--image {
+            margin-top: 8px;
+            max-height: 32px;
+            max-width: 48px;
+            
+          }
+        }
+        &__userAdoress {
+          margin: 30px auto;
+          text-align: left;
+          padding: 20px;
           border-top: 1px solid rgb(222, 226, 240);
           border-bottom: 1px solid rgb(222, 226, 240);
-          padding: 20px;
-          text-align: left;
-         
+          font-size: 14px;
+          &__text {
+            font-weight: 600;
+            margin-bottom: 8px;
+          }
         }
+        &__buy__btn{
+          text-decoration: none;
+          border: none;
+          text-decoration: none;
+          background-color: #3CCACE;
+          color: #fff;
+          font-size: 17px;
+          min-height: 48px;
+          padding: 0 24px;
+          width: 100%;
 
+        }
+        
+        
       }
     }
   }

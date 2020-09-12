@@ -1,16 +1,20 @@
 %main.PurchaseMain
-  .Logo
-    = image_tag("material/logo/logo.png", class:"Logo__image")
+  .Header
+    .Logo
+      = image_tag("material/logo/logo.png", class:"Logo__image")
   .Content
     %h2.Title 購入内容の確認
     .Item
       .Item__image
-      %img(src="data:image/jpeg;base64,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")
-      .Item__Box
-        .Item__Box__name
+        = image_tag("data:image/jpeg;base64,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", class:"Item__image__img")
+      .Item__box
+        .Item__box__name
           Tシャツ
-        .Item__Box__price
-          （税込み）¥1,000
+        .Item__box__price
+          .Item__box__price__sipping
+            送料込み（税込み）
+          .Item__box__price__amount
+            ¥1,000
     .Wrapper
       .Content__price
         .Content__price__text
@@ -22,21 +26,27 @@
           ポイント
         .Content__point__amount
           所持ポイント P0
+
       .Content__payment
         %p.Content__payment__text
-          支払い方法：クレジットカード
+          支払い方法
+        %p.Content__payment__method
+          クレジットカード
         %p.Content__payment__number
           ************1234
         %p.Content__payment__expiration
           有効期限 01/01
         %p.Content__payment__logo
-          Viza
-    .UserAdoress
-      .UserAdoress__postalCode
-        〒123-4567
-      .UserAdoress__streetAddress
-        東京都千代田区丸の内1-2-3
-      .UserAdoress__name
-        田中 太郎
-    .Buy
-      %input{type: "submit", value: "購入する", class: "Buy__btn"}
+          = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Visa_2014_logo_detail.svg/1200px-Visa_2014_logo_detail.svg.png", class: "Content__payment__logo--image") 
+   
+      .Content__userAdoress
+        %h2.Content__userAdoress__text
+          配送先
+        %p.Content__userAdoress__postalCode
+          〒123-4567
+        %p.Content__userAdoress__streetAddress
+          東京都千代田区丸の内1-2-3
+        %p.Content__userAdoress__name
+          田中 太郎
+      .Content__buy
+        %input{type: "submit", value: "購入する", class: "Content__buy__btn"}
