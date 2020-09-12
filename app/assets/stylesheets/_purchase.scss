@@ -2,15 +2,14 @@
   display:none;
 }
 .PurchaseMain {
-  padding: 20px;
   background-color: #f8f8f8;
-  .Logo {
-    text-align: center;
+  
   .Header {
     height: 128px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
     .Logo {
-      text-align: center;
-      margin: 30px 0 0 0;
       &__image {
         height: 54px;
         width: 185px;
@@ -140,12 +139,51 @@
           min-height: 48px;
           padding: 0 24px;
           width: 100%;
-
+          border-radius: 4px;
         }
         
         
       }
     }
   }
+  .PurchaseFooter {
+    padding: 40px 0px 41px;
+    text-align: center;
+    .Terms {
+      color: #333333;
+      
+      font-size: 12px;
+      text-decoration: none;
+      margin-bottom: 5px;
+      list-style: none;
   
+      &__contents {
+        text-decoration: none;
+        padding-left: 10px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        &__content a{
+          padding-left: 20px;
+          text-decoration: none;
+          color: #333333;
+        }
+        &__content :hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .Logo {
+      text-align: center;
+      .Title {
+        &__image {
+          width: 160px;
+          vertical-align: bottom;
+        }
+      }
+      .Text {
+        font-size: 14px;
+      }
+    }
+  }
 }
