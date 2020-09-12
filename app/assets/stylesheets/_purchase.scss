@@ -1,6 +1,3 @@
-#header,#header-nav-area,#header-image,#sub,#main-footer{
-  display:none;
-}
 .PurchaseMain {
   background-color: #f8f8f8;
   
@@ -114,13 +111,12 @@
             margin-top: 8px;
             max-height: 32px;
             max-width: 48px;
-            
           }
         }
         &__userAdoress {
           margin: 30px auto;
           text-align: left;
-          padding: 20px;
+          padding: 30px 20px;
           border-top: 1px solid rgb(222, 226, 240);
           border-bottom: 1px solid rgb(222, 226, 240);
           font-size: 14px;
@@ -141,8 +137,9 @@
           width: 100%;
           border-radius: 4px;
         }
-        
-        
+        &__buy__btn:hover{
+          background: #85d2d4;
+        }
       }
     }
   }
@@ -151,12 +148,10 @@
     text-align: center;
     .Terms {
       color: #333333;
-      
       font-size: 12px;
       text-decoration: none;
       margin-bottom: 5px;
       list-style: none;
-  
       &__contents {
         text-decoration: none;
         padding-left: 10px;
