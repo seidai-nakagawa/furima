@@ -138,20 +138,43 @@
     }
   }
 
-  &__furima-icon{
-    display: block;
-    h1 {
-      .Furima-icon {
-        width: 160px;
-        vertical-align: bottom;
-        text-align: center;
-        margin-top: 100px;
+  .PurchaseFooter {
+    padding: 40px 0px 41px;
+    text-align: center;
+    .Terms {
+      color: #333333;
+      font-size: 12px;
+      text-decoration: none;
+      margin-bottom: 5px;
+      list-style: none;
+      &__contents {
+        text-decoration: none;
+        padding-left: 10px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        &__content a{
+          padding-left: 12px;
+          text-decoration: none;
+          color: #333333;
+          margin-right: 7px;
+        }
+        &__content :hover {
+          text-decoration: underline;
+        }
       }
     }
-    .Text {
-      font-size: 14px;
+    .Logo {
       text-align: center;
-      padding:0 0 50px;
+      .Title {
+        &__image {
+          width: 160px;
+          vertical-align: bottom;
+        }
+      }
+      .Text {
+        font-size: 14px;
+      }
     }
   }
 }
