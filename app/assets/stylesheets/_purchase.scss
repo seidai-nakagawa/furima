@@ -1,0 +1,184 @@
+.PurchaseMain {
+  background-color: #f8f8f8;
+  
+  .Header {
+    height: 128px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    .Logo {
+      &__image {
+        height: 54px;
+        width: 185px;
+      }
+    }
+  }
+  .Content {
+    background-color: #fff;
+    max-width: 700px;
+    margin: 0px auto;
+    padding: 24px 16px;
+    text-align: center;
+    .Title {
+      max-width: 375px;
+      margin: 0px auto;
+      font-size: 24px;
+      line-height: 34px;
+    }
+    .Item {
+      max-width: 375px;
+      margin: 30px auto;
+      display: flex;
+      padding: 32px 16px ;
+      border-top: 1px solid rgb(222, 226, 240);
+      border-bottom: 1px solid rgb(222, 226, 240);
+      &__image {
+        &__img {
+        height: 80px;
+        width: 80px;
+        }
+      }
+      &__box {
+        width: 100%;
+        margin-left: 16px;
+        &__name {
+          font-size: 14px;
+          line-height: 1.4em;
+          margin-bottom: 8px;
+          text-align: left;
+         }
+        &__price {
+          display: flex;
+          justify-content: flex-end;
+          &__sipping {
+            font-size: 12px;
+          }
+          &__amount {
+            font-size: 15px;
+            font-weight: 600;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+    .Wrapper {
+      max-width: 375px;
+      margin: 30px auto;
+      .Content {
+        &__price {
+          margin: 30px auto;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 20px;
+          font-size: 18px;
+          font-weight: 600;
+          &__amount {
+            font-size: 24px;
+          }
+        }
+        &__point {
+          margin: 30px auto;
+          display: flex;
+          justify-content: space-between;
+          padding: 20px;
+          border-bottom: 1px solid rgb(222, 226, 240);
+          &__text {
+            font-weight: 600;
+            line-height: 1.4em;
+            vertical-align: middle;
+            opacity: 0.5;
+            font-size: 14px;
+          }
+          &__amount {
+            font-size: 12px;
+            text-align: right;
+          }
+        }
+        &__payment {
+          margin: 30px auto;
+          padding: 0 20px;
+          text-align: left;
+          font-size: 14px;
+            &__text {
+              font-weight: 600;
+            }
+            &__method {
+              
+              padding-top: 15px;
+            }
+
+          &__logo--image {
+            margin-top: 8px;
+            max-height: 32px;
+            max-width: 48px;
+          }
+        }
+        &__userAdoress {
+          margin: 30px auto;
+          text-align: left;
+          padding: 30px 20px;
+          border-top: 1px solid rgb(222, 226, 240);
+          border-bottom: 1px solid rgb(222, 226, 240);
+          font-size: 14px;
+          &__text {
+            font-weight: 600;
+            margin-bottom: 8px;
+          }
+        }
+        &__buy__btn{
+          text-decoration: none;
+          border: none;
+          text-decoration: none;
+          background-color: #3CCACE;
+          color: #fff;
+          font-size: 17px;
+          min-height: 48px;
+          padding: 0 24px;
+          width: 100%;
+          border-radius: 4px;
+        }
+        &__buy__btn:hover{
+          background: #85d2d4;
+        }
+      }
+    }
+  }
+  .PurchaseFooter {
+    padding: 40px 0px 41px;
+    text-align: center;
+    .Terms {
+      color: #333333;
+      font-size: 12px;
+      text-decoration: none;
+      margin-bottom: 5px;
+      list-style: none;
+      &__contents {
+        text-decoration: none;
+        padding-left: 10px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        &__content a{
+          padding-left: 20px;
+          text-decoration: none;
+          color: #333333;
+        }
+        &__content :hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .Logo {
+      text-align: center;
+      .Title {
+        &__image {
+          width: 160px;
+          vertical-align: bottom;
+        }
+      }
+      .Text {
+        font-size: 14px;
+      }
+    }
+  }
+}
