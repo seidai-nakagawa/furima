@@ -68,14 +68,20 @@
               margin: 0 10px;
               padding-left: 10px;
             }
-            select{
+            &--select, select{
               width: 400px;
               height: 45px;
               border-radius: 4px;
               border: 1px solid #ccc;
               margin: auto;
               padding-left: 16px;
+              color: gray;
             }
+            .year, .month, .day{
+              width: 100px;
+              margin: 0 3px;
+            }
+            
           }
         }
         .submit-btn-size{
