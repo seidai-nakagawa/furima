@@ -67,7 +67,7 @@
                 .Field__field-group__mandatory
                   必須
               .Field__input
-                != sprintf(f.date_select(:birth_day, with_css_classes:'XXXXX', prompt:"--", use_month_numbers: true, start_year: (Time.now.year - 0), end_year: 1900, default: Date.new(1989, 1, 1), date_separator:'%s'),'年','月')+'日'
+                != sprintf(f.date_select(:birth_day, with_css_classes:'XXXXX', prompt:"--", use_month_numbers: true, start_year: (Time.now.year - 0), end_year: 1900, date_separator:'%s'),'年','月')+'日'
             .Field
               .Field__field-group
                 .Field__field-group__label
