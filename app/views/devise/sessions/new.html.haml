@@ -1,0 +1,50 @@
+.Login
+  %h1 
+    %a{href: "/"}
+      = image_tag("material/logo/logo.png",class: 'Login__logo')
+  %main
+    .Login__panel
+      .Login__panel__no-account
+        %p.Login__panel__no-account__comment アカウントをお持ちでない方はこちら
+        - if devise_mapping.registerable? && controller_name != 'registrations'
+          = link_to "新規会員登録", new_registration_path(resource_name), class: 'Login__panel__no-account__button'
+      .Login__panel__sns-btn
+        .Login__panel__sns-btn__google
+          = link_to "#", class: "Login__panel__sns-btn__google__btn" do
+            = icon('fab', 'google', class: "fab")
+            %span Googleでログイン
+        .Login__panel__sns-btn__facebook
+          = link_to "#", class: "Login__panel__sns-btn__facebook__btn" do
+            = icon('fab', 'facebook-square', class: "fab")
+            %span Facebookでログイン
+        .Login__panel__sns-btn__apple
+          = link_to "#", class: "Login__panel__sns-btn__apple__btn" do
+            = icon('fab', 'apple', class: "fab")
+            %span Appleでログイン
+
+      .Login__panel__login-form
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: 'field__size'
+          .field
+            = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: 'field__size'
+          .field 
+            .field__unimplemented 後日「私はロボットではありません」という確認欄を実装する
+          .actions
+            = f.submit "ログイン", class: 'submit-btn-size'
+        - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+          = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: 'Login__panel__login-form__forget-password'
+    .PurchaseFooter
+      .Terms
+        %ul.Terms__contents
+          %li.Terms__contents__content
+            %a(href="#") プライバシーポリシー
+          %li.Terms__contents__content
+            %a(href="#") フリマ利用規約
+          %li.Terms__contents__content
+            %a(href="#") 特定商取引に関する表記
+      .Logo
+        .Title
+          = link_to image_tag("material/logo/logo.png", class: "Title__image"),root_path
+        .Text
+          ©︎ FURIMA
