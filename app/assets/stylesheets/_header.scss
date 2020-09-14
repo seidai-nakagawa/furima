@@ -84,6 +84,7 @@ $font-color: #3CCACE;
           margin-right: 30px;
           text-decoration: none;
           font-size: 14px;
+          color: #333;
         }
         &__category:hover, &__brand:hover {
           color: orange;
@@ -94,13 +95,14 @@ $font-color: #3CCACE;
           padding-left:30px;
           text-decoration: none;
           font-size: 14px;
+          color: #333;
         }
       }
     }
   }
 }
 .Banner {
-  background-image : url(material/pict/bg-appBanner-pict.jpg );
+  background: image-url("bg-appBanner-pict.jpg") no-repeat center;
   padding: 100px 40px;
   position: relative;
   background-size: cover;
