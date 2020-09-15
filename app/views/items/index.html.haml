@@ -1,3 +1,5 @@
+.Header
+  = render "layouts/header"
 %main.Main
   %section.Visual
     .Content
@@ -228,3 +230,9 @@
                     = icon('fa', 'star', class: "ProductList__body--details--likeIcon" )
                     1
                 %p (税込)
+.Aside
+  = render "layouts/aside"
+.Footer
+  = render "layouts/footer"
+.Purchasebtn
+  = render "layouts/purchasebtn"

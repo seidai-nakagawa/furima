@@ -1,0 +1,15 @@
+%header.Header
+  .Contents
+    .Main
+      .Title
+        = link_to image_tag("material/logo/logo.png",class: 'Title__logo')
+      %input{type: "text", class: "SearchBox__text", placeholder: "キーワードから探す"}
+      %button{type: "submit", class: "SearchBox__btn"}
+        = image_tag("material/icon/icon-search1.png", class: "SearchBox__btn__icon")
+    .Nav
+      .Product
+        = link_to "カテゴリー","#", class: "Product__category"
+        = link_to "ブランド","#", class: "Product__brand"
+      .User
+        = link_to "ログイン", new_user_session_path, class: "User__login"
+        = link_to "新規会員登録", new_user_registration_path, class: "User__new"
