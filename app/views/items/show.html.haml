@@ -1,5 +1,127 @@
 .Header
   = render "layouts/header"
+%nav.BreadCrumbs
+  %ul
+    %li
+      %a(href="/") FURIMA
+    %li
+      %i.fa.fa-angle-right
+    %li
+      %a(href="#") ベビー・キッズ
+    %li
+      %i.fa.fa-angle-right
+    %li
+      %a(href="#") ベビー服(男の子用)  ~95cm
+    %li
+      %i.fa.fa-angle-right
+    %li
+      %a(href="#") アウター
+    %li
+      %i.fa.fa-angle-right
+    %li
+      %p Tシャツ
+.ProductMain
+  .ShowMain
+    .Content
+      .ItemBox
+        .ItemBox__name
+          Tシャツ
+        .ItemBox__images
+          %ul
+            %li
+              %img(src="https://pbs.twimg.com/media/EfiXwcOU4AUpyZV?format=jpg&name=large")
+              %ul
+                %li
+                  %img(height="75" src="https://pbs.twimg.com/media/EfiXwbdUwAInG8U?format=jpg&name=large" width="75")
+                %li
+                  %img(height="75" src="https://pbs.twimg.com/media/EfiXwdJU0AEEDQ4?format=jpg&name=large" width="75")
+        .ItemBox__price
+          %span ¥3,000
+          .ItemBox__price__detail
+            %span (税込み)
+            %span 送料込み
+        .ItemBox__description
+          溶けないクリームソーダ
+        .ItemBox__table
+          %table
+            %tbody
+              %tr
+                %th 出品者
+                %td kk
+              %tr
+                %th カテゴリー
+                %td
+                  %a(href="#") ベビー・キッズ
+                  %br/
+                  %a(href="#") ベビー服(男の子用)  ~95cm
+                  %br/
+                  %a(href="#") アウター
+              %tr
+                %th ブランド
+                %td
+              %tr
+                %th 商品のサイズ
+                %td
+              %tr
+                %th 商品の状態
+                %td 新品/未使用
+              %tr
+                %th 配送料の負担
+                %td 送料込み（出品者負担）
+              %tr
+                %th 発送元の地域
+                %td
+                  %a(href="#") 北海道
+              %tr
+                %th 発送日の目安
+                %td 1-2日で発送
+        .ItemBox__option
+          %ul
+            %li.ItemBox__option__likeBtn
+              %a(href="#")
+                %i.fa.fa-star
+                お気に入り 0
+          %ul.optional
+            %li.ItemBox__option__optionalBtn
+              %a(href="#")
+                %i.fa.fa-flag
+                不適切な商品の通報 
+      .CommentBox
+        %textarea.CommentBox__body
+        .CommentBox__msg
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        %button.CommentBox__btn(name="button" type="submit")
+          %i.fa.fa-comment
+          コメントする
+      %ul.MoreLink
+        %li.MoreLink__left
+          %a(href="#")
+            %i.fa.fa-angle-left
+            %span 前の商品
+        %li.MoreLink__right
+          %a(href="#")
+            %span 後ろの商品
+            %i.fa.fa-angle-right
+      .MoreItems
+        %a(href="#") ベビー・キッズをもっと見る
+        .MoreItems__lists
+          .MoreItems__lists__list
+            %a(href="/products/3")
+              %figure.MoreItems__lists__list--img
+                %img(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png")
+              .MoreItems__lists__list__productBody
+                %h3.MoreItems__lists__list__productBody__name
+                  product3
+                .MoreItems__lists__list__productBody__details
+                  %ul
+                    %li 30000円
+                    %li
+                      %i.fa.fa-star.likeIcon
+                      0
+                  %p (税込)
+      
 .Aside
   = render "layouts/aside"
 .Footer
