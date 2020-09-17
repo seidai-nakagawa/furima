@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   end
 
   def new
-    render layout: false
+    # @item = Item.new
+    # @item.images.new
   end
 
   def create
