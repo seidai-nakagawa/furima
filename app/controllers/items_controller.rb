@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+  def purchase
   end
 
 end
