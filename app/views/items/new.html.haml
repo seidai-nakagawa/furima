@@ -22,7 +22,6 @@
                 ドラッグアンドドロップ
                 %br>/
                 またはクリックしてファイルをアップロード
-
     .sell-box
       .sell-title__bottom
         .sell-title__group
@@ -31,7 +30,6 @@
           %span.sell__require
             必須
         %input{autocomplete: "off",name: "name", placeholder: "40文字まで", type: "text", value: "",class: "sell-title__text"}/
-
       .sell-title
         .sell-title__group
           %label.sell__text
@@ -41,7 +39,6 @@
         %textarea.sell-title__textbox{name: "description",placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ",rows: "7"}
         %p.word_count
           0/1000
-
     .sell-box
       .sell-box__header
         .sell__head
@@ -69,14 +66,12 @@
             必須
         %select.sell-title__select{:name => "state"}
           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
-
     .sell-box
       .sell-box__header
         .sell__head
           %p 配送について
         = link_to "#" do
           %i.far.fa-question-circle
-
       .sell-title__bottom
         .sell-title__group
           %label.sell__text
@@ -85,7 +80,6 @@
             必須
         %select.sell-title__select{:name => "shipping_charge"}
           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
-
       .sell-title__bottom
         .sell-title__group
           %label.sell__text
@@ -94,7 +88,6 @@
             必須
         %select.sell-title__select{:name => "prefecture"}
           %option{"aria-selected" => "true", :label => "選択してください", :selected => "selected", :value => ""} 選択してください
-
       .sell-title
         .sell-title__group
           %label.sell__text
@@ -109,7 +102,6 @@
           %p 価格（¥300〜9,999,999）
         = link_to "#" do
           %i.far.fa-question-circle
-
       .sell-title
         .sell-title__price
           %label.sell__text
@@ -136,20 +128,18 @@
           %li.link__back
             = link_to "もどる", "#"
         .sell-ban
-          %p.sell-ban--text
+          %p.sell-ban__text
             禁止されている
-            %a.ban--text{href: "#"}> 行為
+            %a.ban__text{href: "#"}> 行為
             および
-            %a.ban--text{href: "#"}> 出品物
+            %a.ban__text{href: "#"}> 出品物
             を必ずご確認ください。
-            %a.ban--text{href: "#"}> 偽ブランド品
+            %a.ban__text{href: "#"}> 偽ブランド品
             や
-            %a.ban--text{href: "#"}> 盗品物
+            %a.ban__text{href: "#"}> 盗品物
             などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
-            %a.ban--text{href: "#"}> 加盟店規約
+            %a.ban__text{href: "#"}> 加盟店規約
             に同意したことになります。
-
-
 .sell__footer
   %ul.sell__footer__link
     %li.link__text
