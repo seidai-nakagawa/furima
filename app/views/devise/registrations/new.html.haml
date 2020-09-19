@@ -101,7 +101,7 @@
                 .Field__field-group__mandatory
                   必須
               .Field__input
-                = f.select :prefecture_id,  選択してください: ""
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"},
             .Field
               .Field__field-group
                 .Field__field-group__label
