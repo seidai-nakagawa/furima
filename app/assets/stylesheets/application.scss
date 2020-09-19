@@ -1,8 +1,13 @@
 @import "reset";
+@import "font-awesome-sprockets";
+@import 'font-awesome';
 @import "header";
 @import "footer";
 @import "main";
-@import "font-awesome-sprockets";
-@import 'font-awesome';
-@import 'purchase';
 @import "show";
+@import "new_items";
+@import "items";
+@import 'user_show';
+@import 'login';
+@import 'signup';
+@import 'purchase';
