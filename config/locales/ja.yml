@@ -1,6 +1,25 @@
 ---
 ja:
   activerecord:
+    models:
+      user: ユーザー
+      address: アドレス
+    attributes:
+      user:
+        nickname: 二ックネーム
+        family_name: お名前（姓）
+        first_name: お名前（名）
+        family_name_furigana: お名前カナ（姓）
+        first_name_furigana: お名前カナ（名）
+        birth_day: 生年月日
+        family_name_to_deliver: 送付先氏名（姓）
+        first_name_to_deliver: 送付先氏名（名）
+        family_name_to_deliver_furigana: 送付先氏名カナ（姓）
+        first_name_to_deliver_furigana: 送付先氏名カナ（名）
+        post_code: 郵便番号
+        prefecture_id: 都道府県
+        city_name: 市区町村
+        city_address: 番地
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
