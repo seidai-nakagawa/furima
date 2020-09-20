@@ -94,7 +94,7 @@
 | Column    | Type   | Options     |
 | --------- | ------ | ----------- |
 | name      | string | null: false |
-| ancestry  | string | null: false |
+| ancestry  | string |             |
 <!-- ancestryはgem追加必要  -->
 
 ### Association
@@ -110,3 +110,12 @@
 ### Association
 - belongs_to :item
 
+## credit_cards テーブル
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| card_id        | string     | null: false                    |
+| customer_id    | string     | null: false                    |
+| user           | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to: user
