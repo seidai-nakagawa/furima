@@ -52,7 +52,10 @@
             }
 
           }
-          &__input{
+          &__input {
+            .field_with_errors{
+              display: contents;
+            }
             .field-size{
               width: 400px;
               height: 45px;
@@ -136,4 +139,9 @@
       }
     }
   }
+}
+
+.devise-error-messages {
+  color: red;
+  text-align: center;
 }
