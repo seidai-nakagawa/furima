@@ -94,7 +94,7 @@
 | Column    | Type   | Options     |
 | --------- | ------ | ----------- |
 | name      | string | null: false |
-| ancestry  | string | null: false |
+| ancestry  | string |             |
 <!-- ancestryはgem追加必要  -->
 
 ### Association
