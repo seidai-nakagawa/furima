@@ -3,8 +3,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    # @item = Item.new
-    # @item.images.new
+    @item = Item.new
   end
 
   def create
