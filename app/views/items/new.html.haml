@@ -1,7 +1,7 @@
 .sell__header
   .sell__header__logo
     = link_to image_tag("material/logo/logo.png",class: 'sell__header__logo')
-= form_for @item do |f|
+=form_for @item do |f|
   .sell-container
     .sell-container__white
       .sell-box
@@ -30,14 +30,14 @@
               商品名
             %span.sell__require
               必須
-          %input{autocomplete: "off",name: "name", placeholder: "40文字まで", type: "text", value: "",class: "sell-title__text"}/
+          =f.text_field :name, class: 'sell-title__text', placeholder: "40字まで"
         .sell-title
           .sell-title__group
             %label.sell__text
               商品の説明
             %span.sell__require
               必須  
-          %textarea.sell-title__textbox{name: "description",placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ",rows: "7"}
+          =f.text_area :explanation, class: 'sell-title__textbox', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ",rows: "7"
           %p.word_count
             0/1000
       .sell-box
@@ -58,15 +58,16 @@
               ブランド
             %span.sell__require__gray
               任意
-          %input{autocomplete: "off",name: "name", placeholder: "例） Apple", type: "text", value: "",class: "sell-title__text"}/
+          -# %input{autocomplete: "off",name: "name", placeholder: "例） Apple", type: "text", value: "",class: "sell-title__text"}/
+          =f.text_field :brand, class: 'sell-title__text', placeholder: "例） Apple"
+
         .sell-title
           .sell-title__group
             %label.sell__text
               商品の状態
             %span.sell__require
               必須
-          %select.sell-title__select{name: "state"}
-            %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
+          =f.collection_select :state_id, State.all, :id, :name, {include_blank: "選択してください"}, {class: "sell-title__select"}
       .sell-box
         .sell-box__header
           .sell__head
@@ -79,24 +80,21 @@
               配送料の負担
             %span.sell__require
               必須
-          %select.sell-title__select{name: "shipping_charge"}
-            %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
+          =f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {include_blank: "選択してください"}, {class: "sell-title__select"}
         .sell-title__bottom
           .sell-title__group
             %label.sell__text
               発送元の地域
             %span.sell__require
               必須
-          .sell-title__select
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class: ""}
+          =f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: "sell-title__select"}
         .sell-title
           .sell-title__group
             %label.sell__text
               発送までの日数
             %span.sell__require
               必須
-          %select.sell-title__select{name: "shipping_date"}
-            %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
+          =f.collection_select :shipping_date_id, ShippingDate.all, :id, :name, {include_blank: "選択してください"}, {class: "sell-title__select"}
       .sell-box
         .sell-box__header
           .sell__head
@@ -111,21 +109,23 @@
               必須
             %span.sell__price
               ¥
-            %input.sell__box{autocomplete: "off", name: "price", placeholder: "0", type: "number", value: ""}/
+            =f.number_field :price, min:300,max:999999999,placeholder: 0, id:"sell__box"
           .price__fee
             .price__commission
-              .price__commission__left
+              %span.price__commission__left
                 販売手数料（10%)
-              .price__commission__right —
+              %span.price__commission__right —
           .price__profit
             .price__commission
               .price__commission__left
                 販売利益
-              .price__commission__right —
+              .profit__commission__right —
           .btn-group
             .submit-btn
-              %button.submit-btn__mint{tabindex: "0", type: "submit"} 出品する
-              %button.submit-btn__gray{tabindex: "0", type: "submit"} 下書きに保存
+              =f.submit "出品する",class: "submit-btn__mint",tabindex: 0
+              =f.submit "下書きに保存",class: "submit-btn__gray",tabindex: 0
+              -# %button.submit-btn__mint{tabindex: "0", type: "submit"} 出品する
+              -# %button.submit-btn__gray{tabindex: "0", type: "submit"} 下書きに保存
             %li.link__back
               = link_to "もどる", "#"
           .sell-ban
