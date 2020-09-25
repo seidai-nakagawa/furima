@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   has_many :item_images, dependent: :destroy
+  accepts_nested_attributes_for :images, allow_destroy: true
   has_many :purchase_informations
   has_many :comments
   belongs_to :user
