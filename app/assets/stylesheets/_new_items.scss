@@ -319,9 +319,22 @@ a:hover{
   background-color: rgb(245, 245, 245);
   border: 1px dashed rgb(204, 204, 204);
   display: flex;
+  flex-direction:column;
   height:150px;
   position: relative;
   text-align: center;
   font-size: 12px;
   cursor: pointer;
+  .fa-camera{
+    font-size: 25px;
+    height: 24px;
+    margin-bottom: 8px;
+    width: 24px;
+  }
+  &__text{
+
+  }
 }
+// .item-image__delete{
+//   margin-left: 45px;
+// }
