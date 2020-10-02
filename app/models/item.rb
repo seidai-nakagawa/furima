@@ -12,4 +12,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_charge
   belongs_to_active_hash :shipping_date
   belongs_to_active_hash :prefecture
+
+  validates :item_images, presence: true
 end
