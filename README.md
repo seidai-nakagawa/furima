@@ -47,7 +47,7 @@
 | price               | integer    | null: false                    |
 | explanation         | text       | null: false                    |
 | category            | references | null: false, foreign_key: true |
-| brand               | references | null: false, foreign_key: true |
+| brand               | string     |                                |
 | size_id             | integer    | null: false                    | (active_hash)
 | state_id            | integer    | null: false                    | (active_hash)
 | shipping_charge_id  | integer    | null: false                    | (active_hash)
@@ -61,7 +61,6 @@
 - has_many :comments
 - belongs_to :user
 - belongs_to :category
-- belongs_to :brand
 - belongs_to_active_hash :size
 - belongs_to_active_hash :state
 - belongs_to_active_hash :shipping_charge
@@ -81,13 +80,6 @@
 - belongs_to :item
 
 
-## brands テーブル
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-
-### Association
-- has_many :items
 
 
 ## categories テーブル
