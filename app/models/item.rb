@@ -14,4 +14,12 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
 
   validates :item_images, presence: true
+  validates :name, presence: true, length: { maximum: 40 }
+  validates :explanation, presence: true, length: { maximum: 1000 }
+  # validates :category_id, presence: true
+  validates :state_id, presence: true
+  validates :shipping_charge_id, presence: true
+  validates :shipping_date_id, presence: true
+  validates :prefecture_id, presence: true
+  validates :price, presence: true
 end
