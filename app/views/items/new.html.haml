@@ -15,16 +15,14 @@
             最大5枚までアップロードできます
           #sell-image
             .sell-image__box#image-box__container
+              #previews
               =f.fields_for :item_images do |i|
-                -# .sell-image__box__input
                 .sell-image__box__input{"data-index": "#{i.index}"}
                   = i.file_field :item_image, type: 'file', name: "item[item_images_attributes][0][url]", value:"", class:"js-file", id:"img-file"
-                  -# %label{for: "img-file"}
+                  %label{for: "img-file"}
                     %i.fas.fa-camera
                 %p.sell-image__box__text
-                  ドラッグアンドドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
+                  クリックしてファイルをアップロード
       .sell-box
         .sell-title__bottom
           .sell-title__group
