@@ -1,6 +1,7 @@
 .sell__header
   .sell__header__logo
-    = link_to image_tag("material/logo/logo.png",class: 'sell__header__logo')
+    = link_to "/" do
+      = image_tag("material/logo/logo.png",class: 'sell__header__logo')
 =form_with model: [@item], local: true do |f|
   .sell-container
     .sell-container__white
@@ -14,11 +15,11 @@
           %p.sell-title__update
             最大5枚までアップロードできます
           #sell-image
+            #previews
             .sell-image__box#image-box__container
-              #previews
               =f.fields_for :item_images do |i|
                 .sell-image__box__input{"data-index": "#{i.index}"}
-                  = i.file_field :item_image, type: 'file', name: "item[item_images_attributes][0][url]", value:"", class:"js-file", id:"img-file"
+                  = i.file_field :item_image, type: 'file', name: "item[item_images_attributes][#{i.index}][url]",class:"js-file", id:"item_item_images_attributes_0_url"
                   %label{for: "img-file"}
                     %i.fas.fa-camera
                 %p.sell-image__box__text
@@ -127,7 +128,7 @@
               -# %button.submit-btn__mint{tabindex: "0", type: "submit"} 出品する
               -# %button.submit-btn__gray{tabindex: "0", type: "submit"} 下書きに保存
             %li.link__back
-              = link_to "もどる", "#"
+              = link_to "もどる", "/"
           .sell-ban
             %p.sell-ban__text
               禁止されている
@@ -150,6 +151,7 @@
       %li.link__text
         = link_to "特定商取引に関する表記", "#"
     .sell__footer__logo
-      = link_to image_tag("material/logo/logo-white.png",class: 'sell__footer__logo')
+      = link_to "/" do
+        = image_tag("material/logo/logo-white.png",class: 'sell__footer__logo')
     .sell__footer__inc
       © Furima, Inc.

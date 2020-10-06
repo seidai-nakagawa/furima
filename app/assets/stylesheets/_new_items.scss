@@ -315,6 +315,22 @@ a:hover{
 }
 #sell-image{
   display: flex;
+  #previews{
+    display: flex;
+    .js-img{
+      padding-right: 8px;
+      width: 125px;
+      height: 90px;
+    }
+    .js-remove{
+      height: 20px;
+      width: 100px;
+      text-align: center;
+    }
+  }
+  .js-file{
+    display: none;
+  }
   .sell-image__box{
     place-content: center;
     align-items: center;
@@ -334,17 +350,5 @@ a:hover{
       margin-bottom: 8px;
       width: 24px;
     }
-    &__text{
-  
-    }
   }
 }
-.item-image{
-  padding-right: 8px;
-  .item-image__delete{
-  margin-left: 45px;
-}
-}
-// .js-file{
-//   display: none;
-// }

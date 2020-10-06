@@ -1,20 +1,32 @@
 $(document).on('turbolinks:load', ()=> {
-    let buildFileField = (index)=> {
-    let html = `<div data-index="${index}" class="sell-image__box__input">
-                    <input class="js-file" type="file"
-                    name="item[item_images_attributes][${index}][url]"
-                    id="item_item_images_attributes_${index}_url"><br>
-                    <div class="js-remove">削除</div>
+    let buildFileField = (num)=> {
+    let html = `<div data-index="${num}" class="sell-image__box__input">
+                    <input type="file" class="js-file" 
+                    name="item[item_images_attributes][${num}][url]"
+                    id="item_item_images_attributes_${num}_url"><br>
                   </div>`;
     return html;
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
-    return html;
+    const img_html = `<div id="parent"><img data-index="${index}" src="${url}" class="js-img" id="js-img_${index}">
+                      <div class="js-remove" data-index="${index}" id="remove_${index}">削除</div>`;
+    return img_html;
   }
+  
+//【アクションプラン】
+// ①カメラボタンが押されたときのイベントを作る
+// ②一番最後にあるfile_fieldを取得するし、変数化する
+// ③その変数をクリックするメソッドを使用する
+
+$(document).on("click", '.fas.fa-camera', function(){
+  lastFile_field = $('.js-file:last')
+  $(lastFile_field).click();
+})
+
+
   // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  let fileIndex = [1,2,3,4,5];
   // 既に使われているindexを除外
   lastIndex = $('.sell-image__box__input:last').data('index');
   fileIndex.splice(0, lastIndex);
@@ -40,23 +52,36 @@ $(document).on('turbolinks:load', ()=> {
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
   });
-  $('#image-box__container').on('click', '.js-remove', function() {
-    const targetIndex = $(this).parent().data('index');
-    $(this).parent().remove();
-    // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#image-box__container').append(buildFileField(fileIndex[0]));
+
+  $('#image-box__container').on('change', '.js-file', function(e) {
+    //画像が5枚を超えたらドロップボックスを削除する
+    // num = 画像のクラス名（id名）.length
+    num = $('.js-img').length;
+    if (num >= 5){
+      alert('これ以上投稿できません')
+      $('#image-box__container').css('display', 'none')
+    }
   });
 
+
+  // 2.削除ボタン押した時に〜する。
+  $('#previews').on('click', '.js-remove', function() {
+    const targetIndex = $(this).data('index');
+    $(`#item_item_images_attributes_${targetIndex}_url`).remove();
+    $(`#js-img_${targetIndex}`).remove();
+    $(`#remove_${targetIndex}`).remove();
+    // 画像入力欄が0個にならないようにしておく
+    num = $('.js-img').length;
+    if ($('.js-file').length == 0) $('#image-box__container').append(buildFileField(fileIndex[0]));
+    // 画像が５枚以下になった時に画像入力欄が復活する
+    if (num < 5){
+      $('#image-box__container').css('display', '')
+    }
+  });
 
     // 1-2. new file_field
     // 1-3. label for
 
-// 2.削除ボタン押した時に〜する。
-$(document).on("click", '.item-image__delete', function(){
-  let target_image = $(this).parent()
-  target_image.remove();
-  file_field.val("")
-})
 // 3.編集ボタン押した時に〜する。
 
 

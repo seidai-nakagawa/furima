@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   get  "item/purchase"  => "items#purchase"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, only: :show
-  resources :items,only: [:new, :create] do
+  resources :items, only: [:new, :create] do
   end
 end
