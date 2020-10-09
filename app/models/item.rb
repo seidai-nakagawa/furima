@@ -16,7 +16,7 @@ class Item < ApplicationRecord
   validates :item_images, presence: true
   validates :name, presence: true, length: { maximum: 40 }
   validates :explanation, presence: true, length: { maximum: 1000 }
-  # validates :category_id, presence: true
+  # validates :size_id, presence: true
   validates :state_id, presence: true
   validates :shipping_charge_id, presence: true
   validates :shipping_date_id, presence: true

@@ -52,7 +52,14 @@
             %span.sell__require
               必須
           %select.sell-title__select{name: "category"}
-            %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
+            %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""}
+        .sell-title__bottom
+          .sell-title__group
+            %label.sell__text
+              サイズ
+            %span.sell__require
+              必須
+          =f.collection_select :size_id, Size.all, :id, :name, {include_blank: "選択してください"}, {class: "sell-title__select"}
         .sell-title__bottom
           .sell-title__group
             %label.sell__text
