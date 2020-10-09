@@ -2,7 +2,7 @@
   .Contents
     .Main
       .Title
-        = link_to image_tag("material/logo/logo.png",class: 'Title__logo')
+        = link_to image_tag("material/logo/logo.png",class: 'Title__logo'),root_path
       %input{type: "text", class: "SearchBox__text", placeholder: "キーワードから探す"}
       %button{type: "submit", class: "SearchBox__btn"}
         = image_tag("material/icon/icon-search1.png", class: "SearchBox__btn__icon")
