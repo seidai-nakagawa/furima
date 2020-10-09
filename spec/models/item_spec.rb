@@ -95,5 +95,12 @@ describe Item do
       expect(item).to be_valid
     end
 
+    # 14. size_idが空では登録できないこと
+    it "is invalid without a size_id" do
+      item = build(:item, size_id: "")
+      item.valid?
+      expect(item.errors[:size_id]).to include("を入力してください")
+    end
+
   end
 end
