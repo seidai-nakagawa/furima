@@ -1,18 +1,19 @@
-$(document).on('turbolinks:load', ()=> {
-    let buildFileField = (num)=> {
-    let html = `<div data-index="${num}" class="sell-image__box__input">
-                    <input type="file" class="js-file" 
-                    name="item[item_images_attributes][${num}][url]"
-                    id="item_item_images_attributes_${num}_url"><br>
-                  </div>`;
-    return html;
-  }
-  // プレビュー用のimgタグを生成する関数
-  const buildImg = (index, url)=> {
-    const img_html = `<div id="parent"><img data-index="${index}" src="${url}" class="js-img" id="js-img_${index}">
-                      <div class="js-remove" data-index="${index}" id="remove_${index}">削除</div>`;
-    return img_html;
-  }
+// $(document).on('turbolinks:load', ()=> {
+$(function(){
+  let buildFileField = (num)=> {
+  let html = `<div data-index="${num}" class="sell-image__box__input">
+                  <input type="file" class="js-file" 
+                  name="item[item_images_attributes][${num}][url]"
+                  id="item_item_images_attributes_${num}_url"><br>
+                </div>`;
+  return html;
+}
+// プレビュー用のimgタグを生成する関数
+const buildImg = (index, url)=> {
+  const img_html = `<div id="parent"><img data-index="${index}" src="${url}" class="js-img" id="js-img_${index}">
+                    <div class="js-remove" data-index="${index}" id="remove_${index}">削除</div>`;
+  return img_html;
+}
   
 //【アクションプラン】
 // ①カメラボタンが押されたときのイベントを作る
