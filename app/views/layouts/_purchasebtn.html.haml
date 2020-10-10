@@ -2,3 +2,10 @@
   .PurchaseBtn__text 出品する
   = link_to new_item_path do
     = image_tag("material/icon/icon_camera.png",class: "PurchaseBtn__icon")
+  - if user_signed_in?
+    = link_to new_item_path do
+      .PurchaseBtn__area
+        .PurchaseBtn__area__text 出品する
+        = image_tag("material/icon/icon_camera.png",class: "PurchaseBtn__area__icon")
+  - else
+         

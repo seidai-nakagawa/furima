@@ -35,7 +35,7 @@ $font-color: #3CCACE;
     width: 100%;
     min-height: 82px;
     margin: 0 auto;
-    padding: 15px 0 0;
+    padding: 15px 0 ;
     .Main {
       position: relative;
       display: flex;
@@ -93,6 +93,12 @@ $font-color: #3CCACE;
       .User {
         &__login, &__new{
           padding-left:30px;
+          text-decoration: none;
+          font-size: 14px;
+          color: #333;
+        }
+        &__mypage{
+          padding-right: 30px;
           text-decoration: none;
           font-size: 14px;
           color: #333;
