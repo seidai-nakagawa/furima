@@ -1,154 +1,164 @@
 .sell__header
   .sell__header__logo
-    = link_to image_tag("material/logo/logo.png",class: 'sell__header__logo')
-.sell-container
-  .sell-container__white
-    .sell-box
-      .sell-title
-        .sell-title__group
-          %label.sell__text
-            出品画像
-          %span.sell__require
-            必須
-        %p.sell-title__update
-          最大10枚までアップロードできます
-        .sell-image{"data-test": "sell-upload-container"}
-          .sell-image__box{tabindex: "0"}
-            .sell-image__box__group
-              %input.sell-image__box__input{accept: "image/png,image/jpeg", autocomplete: "off", multiple: "multiple", style: "display:none", tabindex: "-1", type: "file"}/
-              %svg.sell-image__box__camera{"aria-hidden": "true", fill: "#222222", "fill-rule": "evenodd", height: "24", viewbox: "0 0 24 24", width: "24"}
-                %path{d: "M19.3,5H16.73l-.8-1.61A.7.7,0,0,0,15.3,3H8.7a.7.7,0,0,0-.63.39L7.27,5H4.7A2.7,2.7,0,0,0,2,7.7V18.3A2.7,2.7,0,0,0,4.7,21H19.3A2.7,2.7,0,0,0,22,18.3V7.7A2.7,2.7,0,0,0,19.3,5ZM12,17.3A4.3,4.3,0,1,1,16.3,13,4.31,4.31,0,0,1,12,17.3Z"}
-              %p.sell-image__box__text
-                ドラッグアンドドロップ
-                %br>/
-                またはクリックしてファイルをアップロード
-    .sell-box
-      .sell-title__bottom
-        .sell-title__group
-          %label.sell__text
-            商品名
-          %span.sell__require
-            必須
-        %input{autocomplete: "off",name: "name", placeholder: "40文字まで", type: "text", value: "",class: "sell-title__text"}/
-      .sell-title
-        .sell-title__group
-          %label.sell__text
-            商品の説明
-          %span.sell__require
-            必須  
-        %textarea.sell-title__textbox{name: "description",placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ",rows: "7"}
-        %p.word_count
-          0/1000
-    .sell-box
-      .sell-box__header
-        .sell__head
-          %p 商品の詳細
-      .sell-title__bottom
-        .sell-title__group
-          %label.sell__text
-            カテゴリー
-          %span.sell__require
-            必須
-        %select.sell-title__select{name: "category"}
-          %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
-      .sell-title__bottom
-        .sell-title__group
-          %label.sell__text
-            ブランド
-          %span.sell__require__gray
-            任意
-        %input{autocomplete: "off",name: "name", placeholder: "例） Apple", type: "text", value: "",class: "sell-title__text"}/
-      .sell-title
-        .sell-title__group
-          %label.sell__text
-            商品の状態
-          %span.sell__require
-            必須
-        %select.sell-title__select{name: "state"}
-          %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
-    .sell-box
-      .sell-box__header
-        .sell__head
-          %p 配送について
-        = link_to "#" do
-          %i.far.fa-question-circle
-      .sell-title__bottom
-        .sell-title__group
-          %label.sell__text
-            配送料の負担
-          %span.sell__require
-            必須
-        %select.sell-title__select{name: "shipping_charge"}
-          %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
-      .sell-title__bottom
-        .sell-title__group
-          %label.sell__text
-            発送元の地域
-          %span.sell__require
-            必須
-        %select.sell-title__select{name: "prefecture"}
-          %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
-      .sell-title
-        .sell-title__group
-          %label.sell__text
-            発送までの日数
-          %span.sell__require
-            必須
-        %select.sell-title__select{name: "shipping_date"}
-          %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""} 選択してください
-    .sell-box
-      .sell-box__header
-        .sell__head
-          %p 価格（¥300〜9,999,999）
-        = link_to "#" do
-          %i.far.fa-question-circle
-      .sell-title
-        .sell-title__price
-          %label.sell__text
-            販売価格
-          %span.sell__require
-            必須
-          %span.sell__price
-            ¥
-          %input.sell__box{autocomplete: "off", name: "price", placeholder: "0", type: "number", value: ""}/
-        .price__fee
-          .price__commission
-            .price__commission__left
-              販売手数料（10%)
-            .price__commission__right —
-        .price__profit
-          .price__commission
-            .price__commission__left
-              販売利益
-            .price__commission__right —
-        .btn-group
-          .submit-btn
-            %button.submit-btn__mint{tabindex: "0", type: "submit"} 出品する
-            %button.submit-btn__gray{tabindex: "0", type: "submit"} 下書きに保存
-          %li.link__back
-            = link_to "もどる", "#"
-        .sell-ban
-          %p.sell-ban__text
-            禁止されている
-            %a.ban__text{href: "#"}> 行為
-            および
-            %a.ban__text{href: "#"}> 出品物
-            を必ずご確認ください。
-            %a.ban__text{href: "#"}> 偽ブランド品
-            や
-            %a.ban__text{href: "#"}> 盗品物
-            などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
-            %a.ban__text{href: "#"}> 加盟店規約
-            に同意したことになります。
-.sell__footer
-  %ul.sell__footer__link
-    %li.link__text
-      = link_to "プライバシーポリシー", "#"
-    %li.link__text
-      = link_to "フリマ利用規約", "#"
-    %li.link__text
-      = link_to "特定商取引に関する表記", "#"
-  .sell__footer__logo
-    = link_to image_tag("material/logo/logo-white.png",class: 'sell__footer__logo')
-  .sell__footer__inc
-    © Furima, Inc.
+    = link_to "/" do
+      = image_tag("material/logo/logo.png",class: 'sell__header__logo')
+=form_with model: [@item], local: true do |f|
+  .sell-container
+    .sell-container__white
+      .sell-box
+        .sell-title
+          .sell-title__group
+            %label.sell__text
+              出品画像
+            %span.sell__require
+              必須
+          %p.sell-title__update
+            最大5枚までアップロードできます
+          #sell-image
+            #previews
+            .sell-image__box#image-box__container
+              =f.fields_for :item_images do |i|
+                .sell-image__box__input{"data-index": "#{i.index}"}
+                  = i.file_field :item_image, type: 'file', name: "item[item_images_attributes][#{i.index}][url]",class:"js-file", id:"item_item_images_attributes_0_url"
+                  %label{for: "img-file"}
+                    %i.fas.fa-camera
+                %p.sell-image__box__text
+                  クリックしてファイルをアップロード
+      .sell-box
+        .sell-title__bottom
+          .sell-title__group
+            %label.sell__text
+              商品名
+            %span.sell__require
+              必須
+          =f.text_field :name, class: 'sell-title__text', placeholder: "40字まで"
+        .sell-title
+          .sell-title__group
+            %label.sell__text
+              商品の説明
+            %span.sell__require
+              必須  
+          =f.text_area :explanation, class: 'sell-title__textbox', placeholder: "商品の説明（必須 1,000文字以内）\n（色、素材、重さ、定価、注意点など）\n\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。\n          ",rows: "7"
+          %p.word_count
+            0/1000
+      .sell-box
+        .sell-box__header
+          .sell__head
+            %p 商品の詳細
+        .sell-title__bottom
+          .sell-title__group
+            %label.sell__text
+              カテゴリー
+            %span.sell__require
+              必須
+          %select.sell-title__select{name: "category"}
+            %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""}
+        .sell-title__bottom
+          .sell-title__group
+            %label.sell__text
+              サイズ
+            %span.sell__require
+              必須
+          =f.collection_select :size_id, Size.all, :id, :name, {include_blank: "選択してください"}, {class: "sell-title__select"}
+        .sell-title__bottom
+          .sell-title__group
+            %label.sell__text
+              ブランド
+            %span.sell__require__gray
+              任意
+          -# %input{autocomplete: "off",name: "name", placeholder: "例） Apple", type: "text", value: "",class: "sell-title__text"}/
+          =f.text_field :brand, class: 'sell-title__text', placeholder: "例） Apple"
+
+        .sell-title
+          .sell-title__group
+            %label.sell__text
+              商品の状態
+            %span.sell__require
+              必須
+          =f.collection_select :state_id, State.all, :id, :name, {include_blank: "選択してください"}, {class: "sell-title__select"}
+      .sell-box
+        .sell-box__header
+          .sell__head
+            %p 配送について
+          = link_to "#" do
+            %i.far.fa-question-circle
+        .sell-title__bottom
+          .sell-title__group
+            %label.sell__text
+              配送料の負担
+            %span.sell__require
+              必須
+          =f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {include_blank: "選択してください"}, {class: "sell-title__select"}
+        .sell-title__bottom
+          .sell-title__group
+            %label.sell__text
+              発送元の地域
+            %span.sell__require
+              必須
+          =f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: "sell-title__select"}
+        .sell-title
+          .sell-title__group
+            %label.sell__text
+              発送までの日数
+            %span.sell__require
+              必須
+          =f.collection_select :shipping_date_id, ShippingDate.all, :id, :name, {include_blank: "選択してください"}, {class: "sell-title__select"}
+      .sell-box
+        .sell-box__header
+          .sell__head
+            %p 価格（¥300〜9,999,999）
+          = link_to "#" do
+            %i.far.fa-question-circle
+        .sell-title
+          .sell-title__price
+            %label.sell__text
+              販売価格
+            %span.sell__require
+              必須
+            %span.sell__price
+              ¥
+            =f.number_field :price, min:300,max:999999999,placeholder: 0, id:"sell__box"
+          .price__fee
+            .price__commission
+              %span.price__commission__left
+                販売手数料（10%)
+              %span.price__commission__right —
+          .price__profit
+            .price__commission
+              .price__commission__left
+                販売利益
+              .profit__commission__right —
+          .btn-group
+            .submit-btn
+              =f.submit "出品する",class: "submit-btn__mint",id: "mint_id",tabindex: 0
+              =f.submit "下書きに保存",class: "submit-btn__gray",tabindex: 0
+              -# %button.submit-btn__mint{tabindex: "0", type: "submit"} 出品する
+              -# %button.submit-btn__gray{tabindex: "0", type: "submit"} 下書きに保存
+            %li.link__back
+              = link_to "もどる", "/"
+          .sell-ban
+            %p.sell-ban__text
+              禁止されている
+              %a.ban__text{href: "#"}> 行為
+              および
+              %a.ban__text{href: "#"}> 出品物
+              を必ずご確認ください。
+              %a.ban__text{href: "#"}> 偽ブランド品
+              や
+              %a.ban__text{href: "#"}> 盗品物
+              などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして
+              %a.ban__text{href: "#"}> 加盟店規約
+              に同意したことになります。
+  .sell__footer
+    %ul.sell__footer__link
+      %li.link__text
+        = link_to "プライバシーポリシー", "#"
+      %li.link__text
+        = link_to "フリマ利用規約", "#"
+      %li.link__text
+        = link_to "特定商取引に関する表記", "#"
+    .sell__footer__logo
+      = link_to "/" do
+        = image_tag("material/logo/logo-white.png",class: 'sell__footer__logo')
+    .sell__footer__inc
+      © Furima, Inc.

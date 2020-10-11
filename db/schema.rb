@@ -10,7 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_122709) do
+ActiveRecord::Schema.define(version: 2020_10_01_051333) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "ancestry"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "url", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_item_images_on_item_id"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "price", null: false
+    t.text "explanation", null: false
+    t.bigint "category_id", null: false
+    t.string "brand"
+    t.integer "size_id", null: false
+    t.integer "state_id", null: false
+    t.integer "shipping_charge_id", null: false
+    t.integer "shipping_date_id", null: false
+    t.integer "prefecture_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["name"], name: "index_items_on_name"
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -41,4 +75,7 @@ ActiveRecord::Schema.define(version: 2020_09_08_122709) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "item_images", "items"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "users"
 end

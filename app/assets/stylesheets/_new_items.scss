@@ -86,7 +86,7 @@
             float: right;
             margin-right: 8px;
           }
-          .sell__box{
+          #sell__box{
             float: right;
             border: 1px solid #efefef;;
             border-radius: 4px;
@@ -140,7 +140,7 @@
             margin:0 0 0 auto;
             margin-right: 8px;
           }
-          .sell__box{
+          #sell__box{
             margin:0 0 0 auto;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -313,15 +313,42 @@ a:hover{
   text-decoration: underline;
   color: gray;
 }
-.sell-image__box{
-  place-content: center;
-  align-items: center;
-  background-color: rgb(245, 245, 245);
-  border: 1px dashed rgb(204, 204, 204);
+#sell-image{
   display: flex;
-  height:150px;
-  position: relative;
-  text-align: center;
-  font-size: 12px;
-  cursor: pointer;
+  #previews{
+    display: flex;
+    .js-img{
+      padding-right: 8px;
+      width: 125px;
+      height: 90px;
+    }
+    .js-remove{
+      height: 20px;
+      width: 100px;
+      text-align: center;
+    }
+  }
+  .js-file{
+    display: none;
+  }
+  .sell-image__box{
+    place-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    border: 1px dashed rgb(204, 204, 204);
+    display: flex;
+    flex-direction:column;
+    height:150px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    .fa-camera{
+      font-size: 25px;
+      height: 24px;
+      margin-bottom: 8px;
+      width: 24px;
+    }
+  }
 }

@@ -4,10 +4,16 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
 require("@rails/activestorage").start()
 require("channels")
-
+require('jquery')
+require('items_new_price')
+// require('items_new_image')
+require('items_new_image2')
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

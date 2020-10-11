@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: :show
-  resources :items,only: [:new, :create] do
+  resources :items, only: [:new, :create] do
   end
 end
