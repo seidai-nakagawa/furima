@@ -8,16 +8,24 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, uniqueness: true, format: {with: VALID_EMAIL_REGEX, message: "＠とドメインを含む必要があります"}
-  validates :nickname, presence: true, uniqueness: true
-  validates :password, presence: true, length: { minimum: 7 }
-  validates :family_name, presence: true, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "全角のみで入力して下さい"}
-  validates :first_name, presence: true, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "全角のみで入力して下さい"}
-  validates :family_name_furigana, presence: true, format: {with: /\A[ぁ-んァ-ヶー－]+\z/, message: "全角ひらがな、全角カタカナのみで入力して下さい"}
-  validates :first_name_furigana, presence: true, format: {with: /\A[ぁ-んァ-ヶー－]+\z/, message: "全角ひらがな、全角カタカナのみで入力して下さい"}
-  validates :birth_day, :family_name_to_deliver, :first_name_to_deliver, :family_name_to_deliver_furigana, :first_name_to_deliver_furigana, :post_code, :prefecture_id, :city_name, :city_address, presence: true
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture
+         VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+         validates :email, presence: true, uniqueness: true, format: {with: VALID_EMAIL_REGEX, message: "＠とドメインを含む必要があります"}
+         validates :nickname, presence: true, uniqueness: true
+         validates :password, presence: true, length: { minimum: 7 }
+         validates :family_name, presence: true, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "全角のみで入力して下さい"}
+         validates :first_name, presence: true, format: {with: /\A[ぁ-んァ-ン一-龥]/, message: "全角のみで入力して下さい"}
+         validates :family_name_furigana, presence: true, format: {with: /\A[ぁ-んァ-ヶー－]+\z/, message: "全角ひらがな、全角カタカナのみで入力して下さい"}
+         validates :first_name_furigana, presence: true, format: {with: /\A[ぁ-んァ-ヶー－]+\z/, message: "全角ひらがな、全角カタカナのみで入力して下さい"}
+         validates :birth_day, presence: true
+         validates :family_name_to_deliver, presence: true
+         validates :first_name_to_deliver, presence: true
+         validates :family_name_to_deliver_furigana, presence: true
+         validates :first_name_to_deliver_furigana, presence: true
+         validates :post_code, presence: true
+         validates :prefecture_id, presence: true
+         validates :city_name, presence: true
+         validates :city_address, presence: true
+         
+         extend ActiveHash::Associations::ActiveRecordExtensions
+         belongs_to_active_hash :prefecture
 end
