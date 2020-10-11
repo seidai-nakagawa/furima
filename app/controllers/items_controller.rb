@@ -25,6 +25,8 @@ class ItemsController < ApplicationController
   def purchase
   end
 
+  def edit
+  end
 
   private
   
