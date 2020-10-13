@@ -26,6 +26,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.new
+    @item.item_images.new
   end
 
   private
