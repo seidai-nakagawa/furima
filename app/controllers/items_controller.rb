@@ -26,8 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.new
-    @item.item_images.new
+    @item = Item.find(params[:id])
   end
 
   private
