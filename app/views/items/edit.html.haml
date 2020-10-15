@@ -17,7 +17,7 @@
           #sell-image
             #previews
               - @item_images.each_with_index do |img, i|
--# imgがインスタンスがDBに保存されていればtrue、保存されていなければfalseを返す。この場合、trueになる。
+              
                 -if img.persisted?
                   #parent{data: {index: i}}
                     = image_tag img.url.url, class:"js-img", id: "js-img_#{i}"
