@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+  # input要素の追加。
     @item.item_images.new
   end
 
@@ -28,6 +29,7 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
     @item_images = @item.item_images
+     @item.item_images.new
     # if @item.user_id == current_user
     #   render :edit
     # else

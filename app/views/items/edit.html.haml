@@ -17,9 +17,11 @@
           #sell-image
             #previews
               - @item_images.each_with_index do |img, i|
-                #parent{data: {index: i}}
-                  = image_tag img.url.url, class:"js-img", id: "js-img_#{i}"
-                  .js-remove{"data-index": "#{i}", id: "remove_#{i}"} 削除
+-# imgがインスタンスがDBに保存されていればtrue、保存されていなければfalseを返す。この場合、trueになる。
+                -if img.persisted?
+                  #parent{data: {index: i}}
+                    = image_tag img.url.url, class:"js-img", id: "js-img_#{i}"
+                    .js-remove{"data-index": "#{i}", id: "remove_#{i}"} 削除
 
             .sell-image__box#image-box__container
               =f.fields_for :item_images do |i|

@@ -45,7 +45,7 @@ $(document).on("click", '.fas.fa-camera', function(){
       
     } else {  // 新規画像追加の処理
       $('#previews').append(buildImg(targetIndex, blobUrl));
-      // fileIndexの先頭の数字を使ってinputを作る
+      // fileIndexの先頭の数字を使ってinputを作る(inputを1つ追加。)
       $('#image-box__container').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
