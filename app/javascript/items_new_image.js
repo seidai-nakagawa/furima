@@ -77,6 +77,10 @@ $(document).on("click", '.fas.fa-camera', function(){
     if (num < 5){
       $('#image-box__container').css('display', '')
     }
+    // 該当indexを振られているチェックボックスを取得する
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    // もしチェックボックスが存在すればチェックを入れる
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
   });
 
     // 1-2. new file_field

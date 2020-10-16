@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
   has_many :item_images, dependent: :destroy
-  accepts_nested_attributes_for :item_images, allow_destroy: true
+  accepts_nested_attributes_for :item_images, allow_destroy: true, reject_if: :no_image
   has_many :purchase_informations
   has_many :comments
   belongs_to :user
@@ -22,4 +22,8 @@ class Item < ApplicationRecord
   validates :shipping_date_id, presence: true
   validates :prefecture_id, presence: true
   validates :price, presence: true
+
+  def no_image(item_images_attributes)
+    item_images_attributes[:url].blank?
+  end
 end
