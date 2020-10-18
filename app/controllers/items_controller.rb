@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
+  before_action :baria_user, only: [:edit, :update]
+
   def index
   end
 
@@ -30,11 +32,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item_images = @item.item_images
      @item.item_images.new
-    # if @item.user_id == current_user
-    #   render :edit
-    # else
-    #   redirect_to root_path
-    # end
   end
 
 def update
@@ -54,6 +51,12 @@ end
   def move_to_index
     unless user_signed_in?
       redirect_to action: :index
+    end
+  end
+
+  def baria_user
+    unless Item.find(params[:id]).user.id.to_i == current_user.id
+      redirect_to root_path, alert: '出品者以外は編集・削除が出来ません'
     end
   end
 end
