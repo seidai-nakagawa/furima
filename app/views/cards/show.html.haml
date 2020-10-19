@@ -1,0 +1,29 @@
+.Header
+  = render "layouts/header"
+.OrderEdit
+  .Content
+    .Side
+      = render "users/user_side"
+    .Main
+      .Title 支払い方法
+      .Contents
+        .Text  クレジットカード
+        .Card
+          .Card__info
+            .Card__info__number  ************1234
+            .Card__info__deadline 有効期限 04/01
+            .Card__info__image
+              = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/visa-91c71914c6ae23d33f896e60bb1e3859.svg", class:"Card__info__image--icon")
+          .Card__delete
+            = link_to "#", class: "Card__Delete__btn" do
+              削除する
+        .NewCard
+          .NewCard__btn
+            = link_to "#", class: "NewCard__btn" do
+              カード情報を編集する
+.Aside
+  = render "layouts/aside"
+.Footer
+  = render "layouts/footer"
+.Purchasebtn
+  = render "layouts/purchasebtn"
