@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :comments
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :purchases
   has_one :card, dependent: :destroy
 
          VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

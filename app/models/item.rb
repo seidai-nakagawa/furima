@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   has_many :comments
   belongs_to :user
   belongs_to :category
+  has_many :purchases
   # belongs_to :brand
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :size
