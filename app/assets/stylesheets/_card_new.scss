@@ -1,0 +1,142 @@
+@mixin comment{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+@mixin icon {
+  margin-left: 8px;
+  font-size: 12px;
+  padding: 0 4px;
+  background-color: #ff0211;
+  color: #fff;
+  border-radius: 2px;
+}
+
+.Order{
+  background-color: #f8f8f8;
+  .Content {
+    max-width: 1020px;
+    padding: 40px 0px;
+    margin: 0px auto;
+    width: 100%;
+    display: flex;
+    .Main {
+      background-color: #fff;
+      margin-left: 40px;
+      width: 1020px;
+      .Title {
+        padding: 32px 16px;
+        font-size: 24px;
+        line-height: 34px;
+        font-weight: 600;
+        text-align: center;
+        border-bottom: 1px solid rgb(245, 245, 245);
+      }
+      .FormBox{
+        max-width: 375px;
+        margin: 0px auto;
+        padding: 46px 16px;
+        .CardNumber {
+          &__text {
+            display: flex;
+            &__comment {
+              @include comment
+            }
+            &__icon{
+              @include icon
+            }
+          }
+          &__inputBox {
+            width: 100%;
+            margin-top: 16px;
+            font-size: 16px;
+            border: 1px solid rgb(204, 204, 204);
+            height: 48px;
+            padding: 0px 16px;
+            border-radius: 2px;
+          }
+          &__image{
+            &__icon {
+              max-height: 22px;
+              max-width: 45px;
+              margin: 5px;
+              vertical-align: middle;
+            }
+
+          }
+
+        }
+        .CardDeadline {
+          margin-top: 28px;
+          &__text {
+            display: flex;
+            &__comment {
+              @include comment
+            }
+            &__icon {
+              @include icon
+            }
+          }
+          &__inputBox {
+            &__selectArea {
+              display: flex;
+              justify-content: space-between;
+              margin-top: 16px;
+              align-items: center;
+              &__month, &__year{
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(204, 204, 204);
+                color: rgb(34, 34, 34);
+                font-size: 16px;
+                height: 48px;
+                line-height: 1;
+                padding: 0px 56px 0px 16px;
+                width: 100%;
+                border-radius: 2px;
+              }
+            }
+            span {
+              width: 46px;
+              text-align: center;
+              margin: 0 18px;
+            }
+          }
+        }
+        .CardSecurityCode {
+          margin-top: 28px;
+          &__text {
+            display: flex;
+            &__comment {
+              @include comment
+            }
+            &__icon {
+              @include icon
+            }
+          }
+          &__inputBox{
+            width: 100%;
+            margin-top: 16px;
+            font-size: 16px;
+            border: 1px solid rgb(204, 204, 204);
+            height: 48px;
+            padding: 0px 16px;
+            border-radius: 2px;
+          }
+        }
+        .RegistrationBtn {
+          background-color: #3CCACE;
+          color: rgb(255, 255, 255);
+          margin-top: 32px;
+          font-size: 17px;
+          min-height: 48px;
+          padding: 0px 24px;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          font-weight: 600;
+          text-decoration: none;
+          width: 100%;
+        }
+      }
+    }
+  }
+} 
