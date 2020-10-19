@@ -14,7 +14,7 @@ class CardsController < ApplicationController
         card: params["payjp_token"],
         metadata: {user_id: current_user.id}
       )
-      @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
       else
         redirect_to action: "create"
