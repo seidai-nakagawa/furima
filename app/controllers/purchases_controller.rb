@@ -22,5 +22,30 @@ class PurchasesController < ApplicationController
   end
   
   def pay
+    @item = Item.find(params[:item_id])
+
+    if @item.purchases.present?
+      redirect_to item_path(@item.id), alert: "売り切れています。"
+    else
+      @item.with_lock do
+        if current_user.card.present?
+          @card = Card.find_by(user_id: current_user.id)
+          Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+          charge = Payjp::Charge.create(
+          amount: @item.price,
+          customer: Payjp::Customer.retrieve(@card.customer_id),
+          currency: 'jpy'
+          )
+          redirect_to root_path, notice: "購入しました。"
+        else
+          Payjp::Charge.create(
+          amount: @item.price,
+          card: params['payjp-token'],
+          currency: 'jpy'
+          )
+        end
+      @purchase = Purchase.create(user_id: current_user.id, item_id: params[:item_id])
+      end
+    end
   end
 end
