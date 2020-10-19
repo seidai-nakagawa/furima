@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'purchase'
     end
   end
-  resources :cards, only: [:new, :create] do
+  resources :cards, only: [:new, :create, :show, :destroy] do
   end
   resources :users, only: :show
   resources :items, only: [:new, :create] do
