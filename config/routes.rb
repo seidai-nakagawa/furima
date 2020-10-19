@@ -4,12 +4,11 @@ Rails.application.routes.draw do
   resources "items", only: [:new, :create] do
   end
   resources "items", only: [:show] do
-    resource :purchases do
-      member do
-        get  "buy"
-        post "pay"
-      end
+    collection do
+      get 'purchase'
     end
+  end
+  resources :cards, only: [:new, :create] do
   end
   resources :users, only: :show
   resources :items, only: [:new, :create] do
