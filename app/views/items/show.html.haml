@@ -97,6 +97,7 @@
               = link_to "#" do
                 %i.fa.fa-flag
                 不適切な商品の通報
+
         - if user_signed_in?  && current_user.id != @item.user_id
           - if @item.purchases.present?
             .Box

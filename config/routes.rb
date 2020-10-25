@@ -22,4 +22,10 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :items, only: [:new, :create] do
   end
+  resources :items do
+    collection do
+      get 'get_category_children', defaults: { fomat: 'json'}
+      get 'get_category_grandchildren', defaults: { fomat: 'json'}
+    end
+  end
 end
