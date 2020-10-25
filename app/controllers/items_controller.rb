@@ -56,9 +56,7 @@ class ItemsController < ApplicationController
   end
 
   def baria_user
-    unless @item.user == current_user
-      redirect_to root_path, alert: '出品者以外は編集・削除が出来ません'
-    end
+    redirect_to root_path, alert: '出品者以外は編集・削除が出来ません' unless @item.user == current_user
   end
 
   def set_item
