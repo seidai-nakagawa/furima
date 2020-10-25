@@ -233,6 +233,11 @@ $font-color: #3CCACE;
         margin: 0 auto;
         display: flex;
         justify-content: space-around;
+        max-width: 1400px;
+        width: 80%;
+        height: 245px;
+        flex-wrap: wrap;
+        overflow-y:hidden;
         .ProductList {
           width: 220px;
           display: inline-block;
