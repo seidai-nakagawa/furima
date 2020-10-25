@@ -1,0 +1,68 @@
+%main.PurchaseMain
+  .Header
+    .Logo
+      =  link_to image_tag("material/logo/logo.png", class: "Logo__image"),root_path
+  .Content
+    %h2.Title 購入内容の確認
+    .Item
+      .Item__image
+        = image_tag("#{@item.item_images[0].url}", class: "Item__image__img")
+      .Item__box
+        .Item__box__name
+          = "#{@item.name}"
+        .Item__box__price
+          .Item__box__price__sipping
+            送料込み（税込み）
+          .Item__box__price__amount
+            = "¥" + "#{@item.price}"
+    .Wrapper
+      .Content__price
+        .Content__price__text
+          支払い金額
+        .Content__price__amount
+          = "¥" + "#{@item.price}"
+      .Content__point
+        .Content__point__text
+          ポイント
+        .Content__point__amount
+          所持ポイント：P0
+
+      - if @user.card.present?
+        .Content__payment
+          %p.Content__payment__text
+            支払い方法
+          %p.Content__payment__method
+            クレジットカード
+          %p.Content__payment__number
+            = "**** **** **** " + @customer_card.last4
+          %p.Content__payment__expiration
+            = "有効期限" + @exp_month + " / " + @exp_year
+          %p.Content__payment__logo
+            = image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Visa_2014_logo_detail.svg/1200px-Visa_2014_logo_detail.svg.png", class: "Content__payment__logo--image") 
+
+        .Content__userAdoress
+          %h2.Content__userAdoress__text
+            配送先
+          %p.Content__userAdoress__postalCode
+            = "〒" + "#{@user.post_code}"
+          %p.Content__userAdoress__streetAddress
+            = "#{@user.city_name}" + "#{@user.city_address}"
+          %p.Content__userAdoress__name
+            = "#{@user.family_name}" + "#{@user.first_name}"
+        .Content__buy
+          = link_to "購入する", pay_item_purchases_path(item_id: @item.id), method: :post, class: "Content__buy__btn"
+  .PurchaseFooter
+    .Terms
+      %ul.Terms__contents
+        %li.Terms__contents__content
+          %a(href="#") プライバシーポリシー
+        %li.Terms__contents__content
+          %a(href="#") フリマ利用規約
+        %li.Terms__contents__content
+          %a(href="#") 特定商取引に関する表記
+    .Logo
+      .Title
+        = link_to image_tag("material/logo/logo.png", class: "Title__image"),root_path
+
+      .Text
+        ©︎ FURIMA

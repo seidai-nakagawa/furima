@@ -1,0 +1,29 @@
+.Header
+  = render "layouts/header"
+.OrderEdit
+  .Content
+    .Side
+      = render "users/user_side"
+    .Main
+      .Title 支払い方法
+      .Contents
+        .Text  クレジットカード
+        .Card
+          .Card__info
+            .Card__info__number  
+              = "**** **** **** " + @customer_card.last4
+            .Card__info__deadline
+              = @exp_month + " / " + @exp_year
+          .Card__delete
+            = link_to new_card_path, method: :delete, class: "destroy__function__link__btn" do
+              削除する
+        .NewCard
+          .NewCard__btn
+            = link_to new_card_path, method: :delete, class: "NewCard__btn" do
+              カードを再登録する
+.Aside
+  = render "layouts/aside"
+.Footer
+  = render "layouts/footer"
+.Purchasebtn
+  = render "layouts/purchasebtn"
