@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_10_23_130525) do
     t.integer "price", null: false
     t.text "explanation", null: false
     t.bigint "category_id", null: false
+    t.string "brand"
     t.integer "size_id", null: false
     t.integer "state_id", null: false
     t.integer "shipping_charge_id", null: false
@@ -49,10 +50,18 @@ ActiveRecord::Schema.define(version: 2020_10_23_130525) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "brand"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["name"], name: "index_items_on_name"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "purchase_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_purchase_informations_on_item_id"
+    t.index ["user_id"], name: "index_purchase_informations_on_user_id"
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -97,7 +106,8 @@ ActiveRecord::Schema.define(version: 2020_10_23_130525) do
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
-
+  add_foreign_key "purchase_informations", "items"
+  add_foreign_key "purchase_informations", "users"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
 end
