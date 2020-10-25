@@ -260,7 +260,7 @@
   background-color: #fff;
   margin: 10px 0;
   text-align: center;
-  .EditButton, .PurchaseButton, .DeleteButton{
+  .EditButton, .PurchaseButton, .DeleteButton, .Text{
     line-height: 48px;
     background: #3CCACE;
     border: 1px solid #3CCACE;
@@ -269,5 +269,23 @@
     font-size: 18px;
     border-radius: 100px;
     margin-left: 120px;
+  }
+}
+.items-box_photo__sold{
+  width: 0;
+  height: 0;
+  border-top: 80px solid #ea352d ;
+  border-right: 80px solid transparent;
+  border-bottom: 80px solid transparent;
+  border-left: 80px solid #ea352d ;
+  position: relative;
+  left:-200px;
+  &__inner{
+    transform: rotate(-45deg);
+    font-size: 32px;
+    margin:-35px 0px 0px -68px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
   }
 }
