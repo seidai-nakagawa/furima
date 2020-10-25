@@ -97,6 +97,11 @@
             = link_to item_path(item.id), data: {"turbolinks" => false}  do
               %figure.ProductList__img
                 = image_tag item.item_images[0].url.url
+                - if item.purchases.present?
+                  .ProductList__img__photo__sold
+                    .ProductList__img__photo__sold__inner
+                      SOLD
+                - else
               .ProductList__body
                 %h3.ProductList__body--ProductList__body--name
                   = item.name
@@ -122,6 +127,11 @@
             = link_to item_path(item.id), data: {"turbolinks" => false}  do
               %figure.ProductList__img
                 = image_tag item.item_images[0].url.url
+                - if item.purchases.present?
+                  .ProductList__img__photo__sold
+                    .ProductList__img__photo__sold__inner
+                      SOLD
+                - else
               .ProductList__body
                 %h3.ProductList__body--name 
                   = item.name
