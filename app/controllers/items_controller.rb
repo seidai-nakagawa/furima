@@ -36,6 +36,7 @@ class ItemsController < ApplicationController
 
 def update
   @item = Item.find(params[:id])
+  @item_images = @item.item_images
   if @item.update(item_params)
     redirect_to root_path, notice: '出品内容を更新しました'
   else
