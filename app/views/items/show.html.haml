@@ -25,56 +25,61 @@
     .Content
       .ItemBox
         .ItemBox__name
-          Tシャツ
+          = @item.name
         .ItemBox__images
           %ul
             %li
-              =image_tag "https://pbs.twimg.com/media/EfiXwcOU4AUpyZV?format=jpg&name=large"
+              = image_tag @item.item_images.first.url.url, alt: "image1"
               %ul
-                %li
-                  = image_tag "https://pbs.twimg.com/media/EfiXwbdUwAInG8U?format=jpg&name=large"
-                %li
-                  = image_tag "https://pbs.twimg.com/media/EfiXwdJU0AEEDQ4?format=jpg&name=large"
+                - @item_images.each do |item_image|
+                  %li
+                    = image_tag item_image.url.url, size: "75×75", alt: "image"
         .ItemBox__price
-          %span ¥3,000
+          %span 
+            ¥
+            = @item.price.to_s(:delimited) 
+            -# to_s(:delimited)が価格にカンマをいれる記述
           .ItemBox__price__detail
-            %span (税込み)
-            %span 送料込み
+            %span (税込)
+            %span
+              = @item.shipping_charge.name
         .ItemBox__description
-          溶けないクリームソーダ
+          = @item.explanation
         .ItemBox__table
           %table
             %tbody
               %tr
                 %th 出品者
-                %td kk
+                %td 
+                  = @item.user.nickname
               %tr
                 %th カテゴリー
                 %td
-                  = link_to  "ベビー・キッズ","#"
-                  %br
-                  = link_to  "ベビー服(男の子用)  ~95cm", "#"
-                  %br
-                  = link_to  "アウター", "#"
+                  = link_to "#{@item.category.name}", "#"
               %tr
                 %th ブランド
                 %td
+                  = @item.brand
               %tr
                 %th 商品のサイズ
                 %td
+                  = @item.size.name
               %tr
                 %th 商品の状態
-                %td 新品/未使用
+                %td 
+                  = @item.state.name
               %tr
                 %th 配送料の負担
-                %td 送料込み（出品者負担）
+                %td 
+                  = @item.shipping_charge.name
               %tr
                 %th 発送元の地域
                 %td
-                  = link_to "北海道", "#"
+                  = link_to "#{@item.prefecture.name}", "#"
               %tr
                 %th 発送日の目安
-                %td 1-2日で発送
+                %td
+                  = @item.shipping_date.name
         .ItemBox__option
           %ul
             %li.ItemBox__option__likeBtn
@@ -85,7 +90,24 @@
             %li.ItemBox__option__optionalBtn
               = link_to "#" do
                 %i.fa.fa-flag
-                不適切な商品の通報 
+                不適切な商品の通報
+        - if user_signed_in?  && current_user.id != @item.user_id
+          .Box
+            = link_to "#{@item.id}/purchases/buy", method: :get do
+              .PurchaseButton
+                = icon('fa', 'shopping-cart')
+                この商品を購入する
+        - if user_signed_in?  && current_user.id == @item.user_id
+          .Box
+            = link_to edit_item_path(@item.id), method: :get do
+              .EditButton
+                = icon('fa', 'edit')
+                この商品を編集する
+          .Box
+            = link_to item_path, method: :delete do
+              .DeleteButton
+                = icon('fa', 'trash')
+                この商品を削除する
       .CommentBox
         %textarea.CommentBox__body
         .CommentBox__msg
@@ -105,7 +127,7 @@
             %span 後ろの商品
             %i.fa.fa-angle-right
       .MoreItems
-        =link_to "ベビー・キッズをもっと見る","#"
+        = link_to "#{@item.category.name}をもっと見る","#"
         .MoreItems__lists
           .MoreItems__lists__list
             = link_to "/products/3" do

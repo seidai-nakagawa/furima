@@ -13,6 +13,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_charge
   belongs_to_active_hash :shipping_date
   belongs_to_active_hash :prefecture
+  validates_associated :item_images
 
   validates :item_images, presence: true
   validates :name, presence: true, length: { maximum: 40 }

@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
+  before_action :baria_user, only: [:edit, :update]
   def index
   end
 
 
   def show
+    @item_images = @item.item_images
   end
 
   def new
@@ -21,10 +24,15 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+  end
   
   def purchase
   end
 
+  def update
+  end
 
   private
   
@@ -36,4 +44,9 @@ class ItemsController < ApplicationController
       redirect_to action: :index
     end
   end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
