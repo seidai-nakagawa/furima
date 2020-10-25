@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :set_item, only: [:edit, :update]
+  before_action :set_item, only: [:show, :destroy, :edit, :update]
   before_action :baria_user, only: [:edit, :update]
 
   def index
@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
 
 
   def show
+    @item_images = @item.item_images
   end
 
   def new
@@ -24,6 +25,9 @@ class ItemsController < ApplicationController
       flash.now[:alert] = 'エラー : 必須項目を入力してください。'
       render :new
     end
+  end
+
+  def purchase
   end
 
   def edit
