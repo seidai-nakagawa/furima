@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   has_many :comments
   belongs_to :user
   belongs_to :category
+  has_many :purchases
   # belongs_to :brand
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :size
@@ -13,6 +14,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_date
   belongs_to_active_hash :prefecture
   validates_associated :item_images
+
   validates :item_images, presence: true
   validates :name, presence: true, length: { maximum: 40 }
   validates :explanation, presence: true, length: { maximum: 1000 }
