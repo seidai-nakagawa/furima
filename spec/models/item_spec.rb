@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Item do
-  describe '#create' do
+  describe '#商品を保存する時' do
 
     # 1. validationがかかっている全カラムがが存在すれば登録できること
     it "is valid with a all culmn" do
