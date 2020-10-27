@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  # require "payjp" 
+  require "payjp" 
 
   def new
     @card = Card.where(user_id: current_user.id)

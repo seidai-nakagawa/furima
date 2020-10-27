@@ -1,0 +1,71 @@
+.Header
+  = render "layouts/header"
+.Order
+  .Content
+    .Side
+      = render "users/user_side"
+    .Main
+      .Title クレジットカード情報入力
+      = form_tag(cards_path, method: :post, id: "charge-form", class: "FormBox", name: "inputForm") do
+        .CardNumber
+          .CardNumber__text
+            .CardNumber__text__comment
+              カード番号
+            .CardNumber__text__icon
+              必須
+          = text_field_tag 'payment_card_no', "", class: 'CardNumber__inputBox', id: "payment_card_no", placeholder: '半角数字のみ', type: "text", maxlength: "16"
+          .CardNumber__image
+            = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/visa-91c71914c6ae23d33f896e60bb1e3859.svg", class: "CardNumber__image__icon")
+            = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/mastercard-8b5b68c12b7a2fc8619c71f49ef9209b.svg", class: "CardNumber__image__icon")
+            = image_tag("https://web-jp-assets.mercdn.net/_next/static/images/saison-550107415f39b81fa19e87c96486ba20.svg", class: "CardNumber__image__icon")
+        .CardDeadline
+          .CardDeadline__text
+            .CardDeadline__text__comment
+              有効期限
+            .CardDeadline__text__icon
+              必須
+          .CardDeadline__inputBox
+            .CardDeadline__inputBox__selectArea
+              %select#payment_card_month.card-default{class: "CardDeadline__inputBox__selectArea__month", name: "payment_card_month", type: "text"}
+                %option{value: ""} --
+                %option{value: "1"}01
+                %option{value: "2"}02
+                %option{value: "3"}03
+                %option{value: "4"}04
+                %option{value: "5"}05
+                %option{value: "6"}06
+                %option{value: "7"}07
+                %option{value: "8"}08
+                %option{value: "9"}09
+                %option{value: "10"}10
+                %option{value: "11"}11
+                %option{value: "12"}12
+              %span 月
+              %select#payment_card_year.card-default{class: "CardDeadline__inputBox__selectArea__year", name: "payment_card_year", type: "text"}
+                %option{value: ""} --
+                %option{value: "2020"}20
+                %option{value: "2021"}21
+                %option{value: "2022"}22
+                %option{value: "2023"}23
+                %option{value: "2024"}24
+                %option{value: "2025"}25
+                %option{value: "2026"}26
+                %option{value: "2027"}27
+                %option{value: "2028"}28
+                %option{value: "2029"}29
+                %option{value: "2030"}30
+              %span 年
+        .CardSecurityCode
+          .CardSecurityCode__text
+            .CardSecurityCode__text__comment
+              セキュリティコード
+            .CardSecurityCode__text__icon
+              必須
+          = text_field_tag  "payment_card_cvc", "", type: 'text', class: 'CardSecurityCode__inputBox', id: "payment_card_cvc", maxlength: "4", placeholder: 'カード背面4桁もしくは3桁の番号'
+        = submit_tag "登録する", class: "RegistrationBtn", id: "payment_card_submit-button"
+.Aside
+  = render "layouts/aside"
+.Footer
+  = render "layouts/footer"
+.Purchasebtn
+  = render "layouts/purchasebtn"

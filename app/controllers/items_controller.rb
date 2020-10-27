@@ -4,6 +4,8 @@ class ItemsController < ApplicationController
   before_action :baria_user, only: [:edit, :update]
 
   def index
+    @items = Item.all.order('created_at DESC')
+    @purchases = Purchase.all
   end
 
 
