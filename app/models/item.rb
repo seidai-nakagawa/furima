@@ -13,9 +13,8 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_charge
   belongs_to_active_hash :shipping_date
   belongs_to_active_hash :prefecture
-  validates_associated :item_images
 
-  validates :item_images, presence: true
+  validates_associated :item_images
   validates :name, presence: true, length: { maximum: 40 }
   validates :explanation, presence: true, length: { maximum: 1000 }
   validates :size_id, presence: true

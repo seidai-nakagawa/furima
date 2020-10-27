@@ -12,6 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2020_10_23_130525) do
 
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "ancestry"
@@ -52,13 +61,13 @@ ActiveRecord::Schema.define(version: 2020_10_23_130525) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "purchase_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id", null: false
+  create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_purchase_informations_on_item_id"
-    t.index ["user_id"], name: "index_purchase_informations_on_user_id"
+    t.index ["item_id"], name: "index_purchases_on_item_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -90,9 +99,10 @@ ActiveRecord::Schema.define(version: 2020_10_23_130525) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "users"
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
-  add_foreign_key "purchase_informations", "items"
-  add_foreign_key "purchase_informations", "users"
+  add_foreign_key "purchases", "items"
+  add_foreign_key "purchases", "users"
 end
