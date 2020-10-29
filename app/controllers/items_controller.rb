@@ -10,6 +10,10 @@ class ItemsController < ApplicationController
 
   def show
     @item_images = @item.item_images
+    @category_id = @item.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
 
   def new
