@@ -19,6 +19,6 @@
   .user__side__menu
     = link_to "お届先住所の編集", root_path, class: "link"
   .user__side__menu
-    = link_to "お支払い情報の登録/確認/削除", root_path, data: {"turbolinks" => false}, class: "link"
+    = link_to "お支払い情報の登録/確認/削除", new_card_path, data: {"turbolinks" => false}, class: "link"
   .user__side__menu
     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" 

@@ -29,7 +29,13 @@
         .ItemBox__images
           %ul
             %li
+              .ItemBox__images__first
               = image_tag @item.item_images.first.url.url, alt: "image1"
+              - if @item.purchases.present?
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD
+              - else
               %ul
                 - @item_images.each do |item_image|
                   %li
@@ -98,13 +104,18 @@
               = link_to "#" do
                 %i.fa.fa-flag
                 不適切な商品の通報
-        
+
         - if user_signed_in?  && current_user.id != @item.user_id
-          .Box
-            = link_to purchase_items_url(@item.id), method: :get do
-              .PurchaseButton
-                = icon('fa', 'shopping-cart')
-                この商品を購入する
+          - if @item.purchases.present?
+            .Box
+              .Text
+                SOLD OUT
+          -else
+            .Box
+              = link_to "#{@item.id}/purchases/buy", method: :get do
+                .PurchaseButton
+                  = icon('fa', 'shopping-cart')
+                  この商品を購入する
         - if user_signed_in?  && current_user.id == @item.user_id
           .Box
             = link_to edit_item_path(@item.id), method: :get do

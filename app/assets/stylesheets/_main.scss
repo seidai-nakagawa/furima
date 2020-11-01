@@ -233,6 +233,11 @@ $font-color: #3CCACE;
         margin: 0 auto;
         display: flex;
         justify-content: space-around;
+        max-width: 1400px;
+        width: 80%;
+        height: 245px;
+        flex-wrap: wrap;
+        overflow-y:hidden;
         .ProductList {
           width: 220px;
           display: inline-block;
@@ -285,5 +290,24 @@ $font-color: #3CCACE;
         }
       }
     }
+  }
+}
+.ProductList__img__photo__sold {
+  width: 0;
+  height: 0;
+  border-top: 30px solid #ea352d ;
+  border-right: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 30px solid #ea352d ;
+  position: relative;
+  top:0;
+  left:0;
+  &__inner{
+    transform: rotate(-45deg);
+    font-size: 12px;
+    margin:-15px 0px 0px -30px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
   }
 }
