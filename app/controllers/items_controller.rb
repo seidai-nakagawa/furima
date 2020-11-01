@@ -40,15 +40,11 @@ class ItemsController < ApplicationController
   def update
   end
 
-  # 親カテゴリが選択された後に動くアクション
   def get_category_children
-    # 選択された親カテゴリに紐づく子カテゴリの配列を取得
     @category_children = Category.find("#{params[:parent_id]}").children
   end
 
-  # 子カテゴリが選択された後に動くアクション
   def get_category_grandchildren
-    # 選択された子カテゴリに紐づく孫カテゴリの配列を取得
     @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
