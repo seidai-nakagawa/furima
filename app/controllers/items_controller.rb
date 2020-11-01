@@ -45,6 +45,15 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    if @item.destroy
+      redirect_to root_path, notice: '削除しました'
+    else
+      flash.now[:alert] = 'エラー : 削除できませんでした。'
+      render :show
+    end
+  end
+  
   private
   
   def item_params
