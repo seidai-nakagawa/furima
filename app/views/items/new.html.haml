@@ -22,7 +22,7 @@
                 クリックしてファイルをアップロード
               =f.fields_for :item_images do |i|
                 .sell-image__box__input{"data-index": "#{i.index}"}
-                  = i.file_field :item_image, type: 'file', name: "item[item_images_attributes][#{i.index}][url]",class:"js-file", id:"item_item_images_attributes_0_url"
+                  = f.file_field :item_image, type: 'file', name: "item[item_images_attributes][#{i.index}][url]",class:"js-file", id:"item_item_images_attributes_0_url"
                   %label{for: "img-file"}
       .sell-box
         .sell-title__bottom
