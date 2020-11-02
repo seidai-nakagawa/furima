@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "csv"
 
-CSV.foreach('db/category.csv') do |row|
+CSV.foreach('db/category - シート1 (1).csv') do |row|
   Category.create(:id => row[0], :name => row[1], :ancestry => row[2])
 end  
