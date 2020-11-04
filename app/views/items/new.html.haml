@@ -22,7 +22,7 @@
                 クリックしてファイルをアップロード
               =f.fields_for :item_images do |i|
                 .sell-image__box__input{"data-index": "#{i.index}"}
-                  = i.file_field :item_image, type: 'file', name: "item[item_images_attributes][#{i.index}][url]",class:"js-file", id:"item_item_images_attributes_0_url"
+                  = f.file_field :item_image, type: 'file', name: "item[item_images_attributes][#{i.index}][url]",class:"js-file", id:"item_item_images_attributes_0_url"
                   %label{for: "img-file"}
       .sell-box
         .sell-title__bottom
@@ -45,14 +45,14 @@
         .sell-box__header
           .sell__head
             %p 商品の詳細
-        .sell-title__bottom
-          .sell-title__group
-            %label.sell__text
+        .sell-title__bottoms
+          .sell-title__categoryWrapper
+            %label.sell-title__categoryWrapper__text
               カテゴリー
-            %span.sell__require
+            %span.sell-title__categoryWrapper__require
               必須
-          %select.sell-title__select{name: "category"}
-            %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""}
+          .listing-select-wrapper
+          =f.collection_select :category_id, @category_parent_array, :id, :name,{ include_blank: "選択してください"}, class:"listing-select-wrapper--select"
         .sell-title__bottom
           .sell-title__group
             %label.sell__text
