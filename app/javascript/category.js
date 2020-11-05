@@ -37,7 +37,7 @@ $(function () {
         $('#children_wrapper').remove();   // 親が変更された時、子以下を削除
         $('#child_category').remove();   // 親が変更された時、子カテゴリのセレクトボックス削除
         $('#grandchildren_wrapper').remove();   // 子が変更された時、孫以下を削除
-        $('#grandchildren_category').remove();  // 子が変更された時、孫カテゴリのセレクトボックス削除
+        $('#grandchild_category').remove();  // 子が変更された時、孫カテゴリのセレクトボックス削除
         var insertHTML = '';
         children.forEach(function (child) {
           insertHTML += appendOption(child);
@@ -51,7 +51,7 @@ $(function () {
       $('#children_wrapper').remove();
       $('#child_category').remove();
       $('#grandchildren_wrapper').remove();
-      $('#grandchildren_category').remove();
+      $('#grandchild_category').remove();
     }
   });
   // 子カテゴリー選択後のイベント
@@ -66,7 +66,7 @@ $(function () {
       })
       .done(function (grandchildren) {
         $('#grandchildren_wrapper').remove();   // 子が変更された時、孫以下を削除
-        $('#grandchildren_category').remove();  // 子が変更された時、孫カテゴリのセレクトボックス削除
+        $('#grandchild_category').remove();  // 子が変更された時、孫カテゴリのセレクトボックス削除
         var insertHTML = '';
         grandchildren.forEach(function (grandchild) {
           insertHTML += appendOption(grandchild);
@@ -78,7 +78,7 @@ $(function () {
       })
     } else {
       $('#grandchildren_wrapper').remove();
-      $('#grandchildren_category').remove();
+      $('#grandchild_category').remove();
     }
   })
 }); 

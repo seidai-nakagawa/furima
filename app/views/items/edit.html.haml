@@ -53,14 +53,16 @@
         .sell-box__header
           .sell__head
             %p 商品の詳細
-        .sell-title__bottom
-          .sell-title__group
-            %label.sell__text
+        .sell-title__bottoms
+          .sell-title__categoryWrapper
+            %label.sell-title__categoryWrapper__text
               カテゴリー
-            %span.sell__require
+            %span.sell-title__categoryWrapper__require
               必須
-          %select.sell-title__select{name: "category"}
-            %option{"aria-selected": "true", label: "選択してください", selected: "selected", value: ""}
+          .listing-select-wrapper
+          = f.collection_select :category_id, @category_parent_array, :id, :name,{ selected: @category_parent.id}, class:"listing-select-wrapper--select"
+          = f.collection_select :category_id, @category_children, :id, :name,{ selected: @category_child.id}, {class:"listing-select-wrapper--select", id: "child_category"}
+          = f.collection_select :category_id, @category_grandchildren, :id, :name,{ selected: @category_grandchild.id}, {class:"listing-select-wrapper--select", id: "grandchild_category"}
         .sell-title__bottom
           .sell-title__group
             %label.sell__text
