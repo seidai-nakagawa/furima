@@ -55,19 +55,11 @@ class ItemsController < ApplicationController
     end
   end
 
-  def get_category_children
-    @category_children = Category.find("#{params[:parent_id]}").children
-  end
-
-  def get_category_grandchildren
-    @category_grandchildren = Category.find("#{params[:child_id]}").children
-  end
-
 
   private
   
   def item_params
-    params.require(:item).permit(:name, :price, :explanation, :category_id, :brand, :size_id, :state_id, :shipping_charge_id, :prefecture_id, :shipping_date_id, item_images_attributes: [:url]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :price, :explanation, :category_id, :brand, :size_id, :state_id, :shipping_charge_id, :prefecture_id, :shipping_date_id, item_images_attributes: [:url, :id, :_destroy]).merge(user_id: current_user.id)
   end
 
   def move_to_index
