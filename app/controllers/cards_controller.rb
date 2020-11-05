@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   require "payjp" 
+  Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
 
   def new
     @card = Card.where(user_id: current_user.id)
