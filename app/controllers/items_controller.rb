@@ -20,7 +20,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-  # input要素の追加。
     @item.item_images.new
   end
 
@@ -38,7 +37,13 @@ class ItemsController < ApplicationController
   end
 
   def edit
-     @item.item_images.new
+    @item.item_images.new
+    @category_grandchild = @item.category
+    @category_child = @category_grandchild.parent
+    @category_parent = @category_child.parent
+    @category = Category.find(params[:id])
+    @category_children = @item.category.parent.parent.children
+    @category_grandchildren = @item.category.parent.children
   end
 
   def update
