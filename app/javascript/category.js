@@ -6,7 +6,7 @@ $(function () {
   function appendChildrenBox(insertHTML) {
     var childSelectHtml = "";
     childSelectHtml = `<div class="listing-select-wrapper__added" id="children_wrapper">
-                        <select id="child__category" name="item[category_id]" class="listing-select-wrapper--selectd">
+                        <select id="child_category" name="item[category_id]" class="listing-select-wrapper--selectd">
                           <option value="">---</option>
                           ${insertHTML}
                         </select>
@@ -16,7 +16,7 @@ $(function () {
   function appendGrandchildrenBox(insertHTML) {
     var grandchildSelectHtml = "";
     grandchildSelectHtml = `<div class="listing-select-wrapper__added" id="grandchildren_wrapper">
-                              <select id="grandchild__category" name="item[category_id]" class="listing-select-wrapper--selectd">
+                              <select id="grandchild_category" name="item[category_id]" class="listing-select-wrapper--selectd">
                                 <option value="">---</option>
                                 ${insertHTML}
                               </select>
@@ -55,8 +55,8 @@ $(function () {
     }
   });
   // 子カテゴリー選択後のイベント
-  $('.sell-title__bottoms').on('change', '#child__category', function () {
-    var childId = document.getElementById('child__category').value;
+  $('.sell-title__bottoms').on('change', '#child_category', function () {
+    var childId = document.getElementById('child_category').value;
     if (childId != "") {
       $.ajax({
         url: 'get_category_grandchildren',
