@@ -15,6 +15,7 @@ class PurchasesController < ApplicationController
         @exp_month = @customer_card.exp_month.to_s
         @exp_year = @customer_card.exp_year.to_s.slice(2,3)
       else
+        redirect_to new_card_path, alert: "クレジットカードを登録してください"
       end
     else
       redirect_to user_session_path, alert: "ログインしてください"
