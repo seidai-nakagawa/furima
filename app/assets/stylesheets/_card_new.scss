@@ -12,9 +12,9 @@
   border-radius: 2px;
 }
 
-.Order{
+.UserMain{
   background-color: #f8f8f8;
-  .Content {
+  .main {
     max-width: 1020px;
     padding: 40px 0px;
     margin: 0px auto;
@@ -23,7 +23,7 @@
     .Main {
       background-color: #fff;
       margin-left: 40px;
-      width: 1020px;
+      width: 100%;
       .Title {
         padding: 32px 16px;
         font-size: 24px;
