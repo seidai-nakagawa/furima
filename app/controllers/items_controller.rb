@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :category_parent_array, only: [:new, :create, :edit, :update]
   before_action :set_item, only: [:show, :destroy, :edit, :update]
   before_action :baria_user, only: [:edit, :update]
+  before_action :category, only: [:edit, :update]
 
   def index
     @items = Item.all.order('created_at DESC')
@@ -38,12 +39,6 @@ class ItemsController < ApplicationController
 
   def edit
     @item.item_images.new
-    @category_grandchild = @item.category
-    @category_child = @category_grandchild.parent
-    @category_parent = @category_child.parent
-    @category = Category.find(params[:id])
-    @category_children = @item.category.parent.parent.children
-    @category_grandchildren = @item.category.parent.children
   end
 
   def update
@@ -70,6 +65,15 @@ class ItemsController < ApplicationController
 
   def get_category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+  def category
+    @category_grandchild = @item.category
+    @category_child = @category_grandchild.parent
+    @category_parent = @category_child.parent
+    @category = Category.find(params[:id])
+    @category_children = @item.category.parent.parent.children
+    @category_grandchildren = @item.category.parent.children
   end
   
   private
