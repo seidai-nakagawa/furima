@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_10_23_130525) do
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.string "ancestry"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -59,15 +59,6 @@ ActiveRecord::Schema.define(version: 2020_10_23_130525) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "purchase_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_purchase_informations_on_item_id"
-    t.index ["user_id"], name: "index_purchase_informations_on_user_id"
   end
 
   create_table "purchases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -112,8 +103,6 @@ ActiveRecord::Schema.define(version: 2020_10_23_130525) do
   add_foreign_key "item_images", "items"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
-  add_foreign_key "purchase_informations", "items"
-  add_foreign_key "purchase_informations", "users"
   add_foreign_key "purchases", "items"
   add_foreign_key "purchases", "users"
 end
