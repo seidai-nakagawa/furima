@@ -29,7 +29,7 @@
 - belongs_to_active_hash :prefecture
 
 
-## purchase_informations テーブル （中間テーブル）
+## purchases テーブル （中間テーブル）
 | Column    | Type       | Options                        |
 |-----------|------------|--------------------------------|
 | user      | references | null: false, foreign_key: true |
@@ -102,7 +102,7 @@
 ### Association
 - belongs_to :item
 
-## credit_cards テーブル
+## cards テーブル
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | card_id        | string     | null: false                    |
