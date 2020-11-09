@@ -26,7 +26,6 @@
               .sell-image__box#image-box__container{style: "display: none"}
                 =f.fields_for :item_images do |i|
                   .sell-image__box__input{"data-index": "#{i.index}"}
-                    -# = i.file_field :item_image, name: "item[item_images_attributes][#{i.index}][url]",class:"js-file", id:"item_item_images_attributes_#{i.index}_url"
                     = i.file_field :url, class:"js-file", id:"item_item_images_attributes_#{i.index}_url"
 
                     = i.check_box :_destroy ,"data-index": "#{i.index}",class:"hidden-destroy"
@@ -38,7 +37,6 @@
               .sell-image__box#image-box__container
                 =f.fields_for :item_images do |i|
                   .sell-image__box__input{"data-index": "#{i.index}"}
-                    -# = i.file_field :item_image, name: "item[item_images_attributes][#{i.index}][url]",class:"js-file", id:"item_item_images_attributes_#{i.index}_url"
                     = i.file_field :url, class:"js-file", id:"item_item_images_attributes_#{i.index}_url"
                     = i.check_box :_destroy ,"data-index": "#{i.index}",class:"hidden-destroy"
                     %label{for: "img-file"}
