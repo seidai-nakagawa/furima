@@ -28,7 +28,7 @@ $(function () {
     var parentId = document.getElementById('item_category_id').value;  // 選択された親カテゴリーのvalueを取得
     if (parentId != "") {        // 親カテゴリーが初期値でないことを確認
       $.ajax({
-        url: 'get_category_children',
+        url: '/items/get_category_children',
         type: 'GET',
         data: { parent_id: parentId },
         dataType: 'json'
@@ -59,7 +59,7 @@ $(function () {
     var childId = document.getElementById('child_category').value;
     if (childId != "") {
       $.ajax({
-        url: 'get_category_grandchildren',
+        url: '/items/get_category_grandchildren',
         type: 'GET',
         data: { child_id: childId },
         dataType: 'json'
